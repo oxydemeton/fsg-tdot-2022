@@ -3,8 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   </head>
   <body>
+    <noscript>
+      <style>
+        #noscript-txt {
+          font-size: 24px;
+          font-family: Sans-serif;
+        }
+        #noscript-txt > a {
+          color: #404040;
+        }
+        #noscript-txt >a:hover {
+          font-style: italic;
+        }
+      </style>
+      <div id="noscript-txt">
+        Diese Website ist ohne Javascript nicht zu nutzen. Bitte aktivieren sie es um die Seite zu besuchen.<br><br>
+        This page is not usable without javascript. Pleas enable it to access the page.<br>
+        <a href="https://github.com/oxydemeton/fsg-tdot-2022">Source Code</a>
+      </div>
+    </noscript>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
