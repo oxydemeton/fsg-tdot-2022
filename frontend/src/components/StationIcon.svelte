@@ -8,4 +8,4 @@
      width={station_icon.width}
      height={station_icon.height}
      class={ station_icon === EmptyIcon ? "hidden" : ""}
-    alt="Station Icon">
+     alt="Station Icon">
