@@ -1,8 +1,10 @@
 <script lang="ts">
+    import Header from "./Header.svelte";
 </script>
 
+<Header></Header>
 <main>
-  Hello World
+    Hello Main Body
 </main>
 
 <style>
