@@ -5,15 +5,10 @@
     import StationPopup from "./StationPopup.svelte";
     import type {Station} from "../script/Station"
     export let station: Station
-    export let status = 0
-    export let pos = {
-        x: 0,
-        y: 0
-    }
     $: current_lock = () => {
-        if (status === 0) {
+        if (station.status === 0) {
             return LockSelected
-        }else if (status < 0){
+        }else if (station.status < 0){
             return LockClosed
         }else {
             return LockOpen
@@ -21,13 +16,13 @@
     }
     let show_popup = false
     function toggle_popup() {
-        if (status === 0) {
+        if (station.status === 0) {
             show_popup = !show_popup
         }
     }
 
     $: popup = () => {
-        return status === 0 && show_popup
+        return station.status === 0 && show_popup
     }
 
     import { createEventDispatcher } from 'svelte';
@@ -39,7 +34,7 @@
         @apply w-full;
     }
 </style>
-<div class="absolute w-1/6" style="left: {pos.x}%; top: {pos.y}%;">
+<div class="absolute w-1/6" style="left: {station.pos.x}%; top: {station.pos.y}%;">
     <img src={current_lock()} alt={"Station: " + station.name} on:click={toggle_popup}>
     {#if (popup())}
         <StationPopup solution={station.solution} on:done={()=>dispatch("done")}></StationPopup>

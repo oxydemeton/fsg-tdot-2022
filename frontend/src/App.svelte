@@ -7,8 +7,15 @@
 
     let group = 0
     let station_num = 0
-    $: station = (): StationType => {
-        return all_stations[id_by_group_and_num(group, station_num)]
+    function next_station() {
+
+    }
+
+    function station_done(station_id) {
+        station_num++
+        all_stations[station_id].status = 1
+        all_stations[id_by_group_and_num(group, station_num)].status = 0
+
     }
 
 </script>
@@ -16,7 +23,9 @@
 <Header station={id_by_group_and_num(group, station_num).toString()}></Header>
 <main>
     <Map></Map>
-    <Station station={station()} pos={{x: 50, y:50}} status={0}></Station>
+    {#each all_stations as sta, i (i)}
+        <Station station={sta} on:done={()=>station_done(i)}></Station>
+    {/each}
 </main>
 <style>
 main {
