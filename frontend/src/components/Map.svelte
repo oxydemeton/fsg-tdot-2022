@@ -11,7 +11,7 @@
 </script>
 <style>
 #Map, #button-box {
-    @apply absolute h-[100vh] w-[100vw] overflow-hidden;
+    @apply absolute h-screen w-full overflow-hidden;
 }
 #button-box {
     @apply mt-1;
