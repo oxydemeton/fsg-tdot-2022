@@ -1,9 +1,10 @@
 <script lang="ts">
     import logo from "./assets/fsgicon.png"
+    export let station: string = "0"
 </script>
 
 <svelte:head>
-    <title>FSG Tdot 2022</title>
+    <title>Station {station}</title>
     <link rel="shortcut icon" href={logo} type="image/png">
     <link rel="apple-touch-icon" href={logo}>
 
