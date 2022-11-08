@@ -1,6 +1,6 @@
 <script lang="ts">
     import logo from "./assets/fsgicon.png"
-    export let station = "0"
+    export let station: string = "0"
 </script>
 
 <svelte:head>

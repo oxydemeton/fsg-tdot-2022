@@ -1,23 +1,60 @@
+import type {Station} from "./Station"
 
 const group_count = 10
 
 //Stations all Groups start with
-const beginning_stations = [
-    "Mensa"
+const default_status = -1
+const beginning_stations: Station[] = [
+    {
+        name: "Mensa",
+        pos: {x: 10, y: 100},
+        solution: "",
+        status: default_status
+    }
 ]
 
 //Stations all groups end with
-const ending_stations = [
-    "Sporthalle"
+const ending_stations: Station[]  = [
+    {
+        name: "Sporthalle",
+        pos: {x: 90, y: 60},
+        solution: "",
+        status: default_status
+    }
 ]
 
 //Regular Stations wich are split up between the groups
-const general_stations = [
-    "Gesellschaftswissenschaften",
-    "Sprachwissenschaften",
-    "Bücherei",
-    "Kunst und Musik",
-    "Naturwissenschaften"
+const general_stations: Station[]  = [
+    {
+        name: "Gesellschaftswissenschaften",
+        pos: {x: 10, y: 10},
+        solution: "Gesellschaft",
+        status: default_status
+    },
+    {
+        name: "Sprachwissenschaften",
+        pos: {x: 20, y: 20},
+        solution: "Sowi",
+        status: default_status
+    },
+    {
+        name: "Bücherei",
+        pos: {x: 80, y: 90},
+        solution: "Buch",
+        status: default_status
+    },
+    {
+        name: "Kunst und Musik",
+        pos: {x: 15, y:15},
+        solution: "Ist das Kunst?",
+        status: default_status
+    },
+    {
+        name: "Naturwissenschaften",
+        pos: {x: 70, y: 80},
+        solution: "Natur",
+        status: default_status
+    }
 ]
 //Export constants
 export {group_count, beginning_stations, general_stations, ending_stations}

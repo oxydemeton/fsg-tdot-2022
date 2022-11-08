@@ -11,18 +11,18 @@
 </script>
 <style>
 #Map, #button-box {
-    @apply absolute;
+    @apply absolute h-[98vh] overflow-hidden;
 }
 #button-box {
     @apply mt-1;
 }
 button {
-    @apply p-1 mx-1 my-0.5 rounded bg-neutral-800 ;
+    @apply p-1 mx-1 my-0.5 rounded bg-neutral-700 ;
 }
 
 </style>
 <img id="Map" src={compute_current_img()} alt="Map">
 <div id="button-box">
-    <button type="button" on:click={()=>floor_lvl++} disabled={floor_lvl>0} class="disabled:bg-neutral-700"> /\</button> <br>
-    <button type="button" on:click={()=>floor_lvl--} disabled={floor_lvl<0} class="disabled:bg-neutral-700 disabled:text-neutral-800"> \/</button>
+    <button type="button" on:click={()=>floor_lvl++} disabled={floor_lvl>0} class="disabled:bg-neutral-600"> /\</button> <br>
+    <button type="button" on:click={()=>floor_lvl--} disabled={floor_lvl<0} class="disabled:bg-neutral-600 disabled:text-neutral-700"> \/</button>
 </div>
