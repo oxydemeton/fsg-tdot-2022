@@ -29,6 +29,6 @@
 </main>
 <style>
 main {
-    @apply overflow-hidden h-[100vh] w-[133vh] relative;
+    @apply overflow-hidden h-[100vh] w-[100vw] relative;
 }
 </style>
