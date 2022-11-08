@@ -21,14 +21,19 @@
 </script>
 
 <Header station={id_by_group_and_num(group, station_num).toString()}></Header>
-<main>
-    <Map></Map>
-    {#each all_stations as sta, i (i)}
-        <Station station={sta} on:done={()=>station_done(i)}></Station>
-    {/each}
-</main>
+<div id="bg">
+    <main>
+        <Map></Map>
+        {#each all_stations as sta, i (i)}
+            <Station station={sta} on:done={()=>station_done(i)}></Station>
+        {/each}
+    </main>
+</div>
 <style>
-main {
-    @apply overflow-hidden h-screen w-screen relative;
-}
+    #bg {
+        background-color: rgb(46, 46, 46)
+    }
+    main {
+        @apply overflow-hidden h-[100vh] w-[133vh] relative;
+    }
 </style>
