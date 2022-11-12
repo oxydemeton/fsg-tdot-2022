@@ -1,9 +1,9 @@
 <script lang="ts">
-    export let station: string = "0"
+    export let station: string
 </script>
 
 <svelte:head>
-    <title>Station {station}</title>
+    <title>Station: {station}</title>
 
     <meta name="keywords" content="FSG, Geldern, Tdot, Tag der offenen Tür, Friedrich, Spee, Gymnasium, 2022">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
