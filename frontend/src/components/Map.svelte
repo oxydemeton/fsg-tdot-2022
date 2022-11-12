@@ -1,11 +1,15 @@
 <script lang="ts">
     export let floor_lvl = 0
-    import Floor0 from "../assets/example_map.svg"
+    import Eg from "../assets/map/eg.png"
+    import Ug from "../assets/map/ug.png"
+    import Og from "../assets/map/og.png"
     $: compute_current_img = () => {
         if (floor_lvl === 0) {
-            return Floor0
+            return Eg
+        } else if (floor_lvl < 0) {
+            return Ug
         } else {
-            return ""
+            return Og
         }
     }
 </script>
@@ -17,12 +21,13 @@
     @apply mt-1;
 }
 button {
-    @apply p-1 mx-1 my-0.5 rounded bg-neutral-700 ;
+    @apply p-2 mx-2 my-1 rounded-full bg-neutral-600 text-lg font-bold tracking-tighter;
+    touch-action: manipulation;
 }
 
 </style>
 <img id="Map" src={compute_current_img()} alt="Map">
 <div id="button-box">
-    <button type="button" on:click={()=>floor_lvl++} disabled={floor_lvl>0} class="disabled:bg-neutral-600"> /\</button> <br>
-    <button type="button" on:click={()=>floor_lvl--} disabled={floor_lvl<0} class="disabled:bg-neutral-600 disabled:text-neutral-700"> \/</button>
+    <button type="button" on:click={()=>floor_lvl++} disabled={floor_lvl>0} class="disabled:bg-neutral-500 disabled:text-neutral-700"> /\</button> <br>
+    <button type="button" on:click={()=>floor_lvl--} disabled={floor_lvl<0} class="disabled:bg-neutral-500 disabled:text-neutral-700"> \/</button>
 </div>

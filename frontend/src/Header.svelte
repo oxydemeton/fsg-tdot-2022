@@ -1,12 +1,9 @@
 <script lang="ts">
-    import logo from "./assets/fsgicon.png"
     export let station: string = "0"
 </script>
 
 <svelte:head>
     <title>Station {station}</title>
-    <link rel="shortcut icon" href={logo} type="image/png">
-    <link rel="apple-touch-icon" href={logo}>
 
     <meta name="keywords" content="FSG, Geldern, Tdot, Tag der offenen Tür, Friedrich, Spee, Gymnasium, 2022">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
