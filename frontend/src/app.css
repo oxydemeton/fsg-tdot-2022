@@ -2,6 +2,6 @@
     touch-action: none;
 }
 
-@tailwind utilities;
-@tailwind components;
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
