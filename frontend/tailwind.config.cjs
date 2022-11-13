@@ -5,6 +5,11 @@ module.exports = {
     extend: {
       colors: {
         'fsg': "#3e6fb4"
+      },
+      minWidth: {
+        '1/2': '50%',
+        '1/3': '33%',
+        '2/3': '66%',
       }
     },
   },

@@ -25,7 +25,7 @@
         @apply rounded-lg bg-neutral-400/80 w-full p-0.5 my-1 border-2 border-neutral-800 font-semibold text-xl;
     }
     form {
-        @apply w-1/3 h-auto bg-neutral-500/70 rounded-xl mt-1 p-4;
+        @apply h-auto bg-neutral-500/70 rounded-xl mt-1 p-4;
     }
     dialog {
         @apply fixed top-0 left-0 flex justify-center items-center h-screen w-screen bg-neutral-600/50 z-20 backdrop-blur-sm select-none;
@@ -35,7 +35,7 @@
     }
 </style>
 <dialog open>
-    <form on:submit={submit}>
+    <form on:submit={submit} class="w-fit min-w-1/3 max-w-2/3">
         <button type="button" on:click={()=>dispatch("close")} class="
             rounded-xl text-xl bg-black/50 w-7 h-7 font-extrabold font-mono hover:ring-4 ring-fsg text-center">
             X
