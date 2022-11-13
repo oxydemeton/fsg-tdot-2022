@@ -37,6 +37,6 @@
 <div class="absolute w-1/6" style="left: {station.pos.x}%; top: {station.pos.y}%;">
     <img src={current_lock()} alt={"Station: " + station.name} on:click={toggle_popup}>
     {#if (popup())}
-        <StationPopup solution={station.solution} on:done={()=>dispatch("done")}></StationPopup>
+        <StationPopup station={station} on:done={()=>dispatch("done")} on:close={toggle_popup}></StationPopup>
     {/if}
 </div>

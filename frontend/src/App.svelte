@@ -33,7 +33,6 @@
         {#each all_stations as sta, i (i)}
             <Station station={sta} on:done={()=>station_done(i)}></Station>
         {/each}
-        {group}
     </main>
 </div>
 <style>

@@ -1,37 +1,67 @@
 <script lang="ts">
-    export let solution
-    import { createEventDispatcher } from 'svelte';
+    import type {Station} from "../script/Station";
 
+    export let station: Station
+    import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
     let txt = ""
 
-    function submit(){
-        if (txt === solution) {
+    function submit(e){
+        e.preventDefault()
+        if (txt === station.solution) {
             dispatch("done")
+        }else {
+            mistake = "Das Lösungswort ist falsch."
+            txt = ""
         }
     }
+    let mistake = ""
 </script>
 <style>
-    button {
-        @apply rounded bg-neutral-300 w-full m-0.5 p-0.5 border-2 border-neutral-800;
+    * {
+        @apply outline-0;
     }
-    input {
-        @apply w-full rounded bg-neutral-300;
+    .submit-btn {
+        @apply rounded-lg bg-neutral-400 w-3/4 p-0.5 my-1 border-2 border-neutral-800 font-semibold text-xl;
     }
-    div {
-        @apply w-full h-auto bg-neutral-400 rounded mt-1 p-1;
+    form {
+        @apply w-1/4 h-auto bg-neutral-500/60 rounded-xl mt-1 p-4;
+    }
+    .center-form {
+        @apply text-center;
+    }
+    dialog {
+        @apply fixed top-0 left-0 flex justify-center items-center h-screen w-screen bg-neutral-500/50 z-20 backdrop-blur-sm select-none;
+    }
+    h2 {
+        @apply text-3xl font-bold font-mono w-full text-center;
     }
 </style>
-<div>
-    {#if (solution.length > 0)}
-    <label for="stationsolution">Lösung:</label> <br>
-    <input type="text" name="solution" id="stationsolution" maxlength={solution.length} spellcheck="false" bind:value={txt}>
-    <button type="button" on:click={submit} class="hover:bg-neutral-500">
-        Check
-    </button>
-    {:else}
-    <button type="button" on:click={submit} class="hover:bg-neutral-500">
-        Weiter
-    </button>
-    {/if}
-</div>
+<dialog open>
+    <form on:submit={submit}>
+        <button type="button" on:click={()=>dispatch("close")} class="
+            rounded-xl text-xl bg-white w-7 h-7 font-extrabold font-mono hover:ring-4 ring-fsg text-center">
+            X
+        </button>
+        <div class="center-form">
+            <h2>{station.name}</h2>
+            {#if (station.solution.length > 0)}
+                <input required type="text" name="solution" id="stationsolution" maxlength={station.solution.length} spellcheck="false" bind:value={txt} placeholder="Lösung"
+                    class="w-full my-1 rounded block
+                    text-white
+                    bg-neutral-600/75 focus:bg-neutral-800/90
+                    font-light focus:font-medium
+                    placeholder-gray-300 placeholder:italic placeholder:font-light
+                    focus:ring-4 ring-fsg
+                    ">
+                <button type="submit" class="submit-btn">
+                    Check
+                </button>
+            {:else}
+                <button type="submit" class="submit-btn"> Weiter </button>
+            {/if}
+            <br>
+            <span class="italic font-light text-black bg-red-600/20 rounded-xl m-1 select-all">{mistake}</span>
+        </div>
+    </form>
+</dialog>
