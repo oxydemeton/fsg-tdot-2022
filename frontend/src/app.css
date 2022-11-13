@@ -1,7 +1,10 @@
 * {
     touch-action: none;
 }
+img {
+    user-select: none;
+}
 
-@tailwind utilities;
-@tailwind components;
 @tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,15 +1,11 @@
 <script lang="ts">
     import Header from "./Header.svelte";
-    import {all_stations, id_by_group_and_num} from "./script/Stations_and_gruops"
+    import {all_stations, group_count, id_by_group_and_num} from "./script/Stations_and_gruops"
     import Map from "./components/Map.svelte";
     import Station from "./components/Station.svelte";
-    import type {Station as StationType} from "./script/Station"
 
-    let group = 0
+    let group: number = 0
     let station_num = 0
-    function next_station() {
-
-    }
 
     function station_done(station_id) {
         station_num++
@@ -18,9 +14,19 @@
 
     }
 
+    //Code to execute on page Load
+    const hash_params = {}
+    window.location.hash.replace("#", "").split("&").forEach((t)=>{
+        const name = t.split("=")[0]
+        hash_params[name] = t.split("=")[1]
+    })
+    if (!isNaN(Number(hash_params["group"]))) {
+        group = Number(hash_params["group"]) % group_count
+    }
+
 </script>
 
-<Header station={id_by_group_and_num(group, station_num).toString()}></Header>
+<Header station={all_stations[id_by_group_and_num(group, station_num)].name}></Header>
 <div id="bg">
     <main>
         <Map></Map>

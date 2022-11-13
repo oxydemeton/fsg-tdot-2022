@@ -1,6 +1,6 @@
 import type {Station} from "./Station"
 
-const group_count = 10
+const group_count = 8
 
 //Stations all Groups start with
 const default_status = -1
@@ -40,7 +40,7 @@ const general_stations: Station[]  = [
     {
         name: "Bücherei",
         pos: {x: 80, y: 90},
-        solution: "Buch",
+        solution: "",
         status: default_status
     },
     {
@@ -53,6 +53,12 @@ const general_stations: Station[]  = [
         name: "Naturwissenschaften",
         pos: {x: 70, y: 80},
         solution: "Natur",
+        status: default_status
+    },
+    {
+        name: "Informatik",
+        pos: {x: 50, y: 50},
+        solution: "",
         status: default_status
     }
 ]
