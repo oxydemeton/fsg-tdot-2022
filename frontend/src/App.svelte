@@ -3,8 +3,9 @@
     import {all_stations, group_count, id_by_group_and_num} from "./script/Stations_and_gruops"
     import Map from "./components/Map.svelte";
     import Station from "./components/Station.svelte";
+    import GroupSelector from "./components/GroupSelector.svelte";
 
-    let group: number = 0
+    let group: number = -1
     let station_num = 0
 
     function station_done(station_id) {
@@ -29,12 +30,17 @@
 <Header station={all_stations[id_by_group_and_num(group, station_num)].name}></Header>
 <div id="bg">
     <main>
-        <Map></Map>
-        {#each all_stations as sta, i (i)}
-            <Station station={sta} on:done={()=>station_done(i)}></Station>
-        {/each}
+        <Map> </Map>
+        {#if group >= 0}
+            {#each all_stations as sta, i (i)}
+                <Station station={sta} on:done={()=>station_done(i)}></Station>
+            {/each}
+        {:else}
+            <GroupSelector on:select={(g)=>group = g.detail}></GroupSelector>
+        {/if}
     </main>
 </div>
+
 <style>
     #bg {
         background-color: rgb(46, 46, 46)
