@@ -1,15 +1,26 @@
 <script lang="ts">
     export let station: string
+    import Eg               from "./assets/map/eg.png"
+    import Ug               from "./assets/map/ug.png"
+    import Og               from "./assets/map/og.png"
+    import LockClosed       from "./assets/schloss_closed.jpg"
+    import LockOpen         from "./assets/schloss_closed.jpg"
+    import LockSelected     from "./assets/schloss_closed.jpg"
+    const images = [
+        Eg,
+        Og,
+        Ug,
+        LockClosed,
+        LockOpen,
+        LockSelected
+    ]
 </script>
 
 <svelte:head>
     <title>Station: {station}</title>
 
-    <meta name="keywords" content="FSG, Geldern, Tdot, Tag der offenen Tür, Friedrich, Spee, Gymnasium, 2022">
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <meta name="description" content="Schülerführung für neue Schüler am FSG für den 03.12.2022 am Tag der offenen Tür.">
-    <meta name="application-name" content="Fsg Tdot guide 2022">
-    <meta name="theme-color" content="#2E2E2E">
-    <meta name="generator" content="svelte">
+    {#each images as pre_img}
+        <link rel="prefetch" href={pre_img} as="image">
+    {/each}
 
 </svelte:head>
