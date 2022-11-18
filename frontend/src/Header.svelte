@@ -3,9 +3,9 @@
     import Eg               from "./assets/map/eg.png"
     import Ug               from "./assets/map/ug.png"
     import Og               from "./assets/map/og.png"
-    import LockClosed       from "./assets/schloss_closed.jpg"
-    import LockOpen         from "./assets/schloss_closed.jpg"
-    import LockSelected     from "./assets/schloss_closed.jpg"
+    import LockClosed       from "./assets/SchlossNormal.png"
+    import LockOpen         from "./assets/SchlossGrün.png"
+    import LockSelected     from "./assets/SchlossRot.png"
     const images = [
         Eg,
         Og,

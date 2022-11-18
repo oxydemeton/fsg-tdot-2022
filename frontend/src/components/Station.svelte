@@ -1,7 +1,7 @@
 <script lang="ts">
-    import LockClosed from "../assets/schloss_closed.jpg"
-    import LockOpen from "../assets/schloss_closed.jpg"
-    import LockSelected from "../assets/schloss_closed.jpg"
+    import LockClosed from "../assets/SchlossNormal.png"
+    import LockOpen from "../assets/SchlossGrün.png"
+    import LockSelected from "../assets/SchlossRot.png"
     import StationPopup from "./StationPopup.svelte";
     import type {Station} from "../script/Station"
     export let station: Station
@@ -34,7 +34,7 @@
         @apply w-full;
     }
 </style>
-<div class="absolute w-1/6" style="left: {station.pos.x}%; top: {station.pos.y}%;">
+<div class="absolute w-36 h-36" style="left: {station.pos.x}%; top: {station.pos.y}%;">
     <button on:click={toggle_popup}>
         <img src={current_lock()} alt={"Station: " + station.name}>
     </button>
