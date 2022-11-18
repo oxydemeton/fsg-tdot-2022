@@ -71,7 +71,8 @@ const all_stations = beginning_stations.concat(general_stations).concat(ending_s
 //Local function to generate general_id by group and inner general station count
 function general_group_station(group_id: number, station_num: number): number {
     const first_general_station = group_id % general_stations.length
-    return (first_general_station + station_num) % general_stations.length
+    if (group_id >= group_count/2) return (first_general_station + general_stations.length - station_num) % general_stations.length
+    else return (first_general_station + station_num) % general_stations.length
 }
 
 //Generating Station ID for station number and group
