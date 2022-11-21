@@ -4,4 +4,5 @@ export interface Station {
     name: string
     status: number
     desc?: string
+    floor: number
 }

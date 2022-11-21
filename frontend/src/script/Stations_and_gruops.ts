@@ -8,7 +8,8 @@ const beginning_stations: Station[] = [
     {
         name: "Mensa",
         pos: {x: 0, y: 85},
-        status: 0
+        status: 0,
+        floor: 0
     }
 ]
 
@@ -18,7 +19,8 @@ const ending_stations: Station[]  = [
         name: "Unterstufen Schulhof",
         pos: {x: 20, y: 20},
         desc: "Finde so paar Boxen",
-        status: default_status
+        status: default_status,
+        floor: 0
     }
 ]
 
@@ -28,35 +30,41 @@ const general_stations: Station[]  = [
         name: "Gesellschaftswissenschaften",
         pos: {x: 30.5, y: 35},
         solution: "Gesellschaft",
-        status: default_status
+        status: default_status,
+        floor: 0
     },
     {
         name: "Sprachwissenschaften",
         pos: {x: 55, y: 35},
         solution: "Sowi",
-        status: default_status
+        status: default_status,
+        floor: 1
     },
     {
         name: "Bücherei",
-        pos: {x: 0, y: 0},
-        status: default_status
+        pos: {x: 50, y: 50},
+        status: default_status,
+        floor: -1
     },
     {
         name: "Kunst und Musik",
-        pos: {x: 0, y:0},
+        pos: {x: 50, y:50},
         solution: "Ist das Kunst?",
-        status: default_status
+        status: default_status,
+        floor: 0
     },
     {
         name: "Naturwissenschaften",
-        pos: {x: 0, y: 0},
+        pos: {x: 50, y: 50},
         solution: "Natur",
-        status: default_status
+        status: default_status,
+        floor: 1
     },
     {
         name: "Informatik",
-        pos: {x: 0, y: 0},
-        status: default_status
+        pos: {x: 50, y: 50},
+        status: default_status,
+        floor: 1
     }
 ]
 //Export constants

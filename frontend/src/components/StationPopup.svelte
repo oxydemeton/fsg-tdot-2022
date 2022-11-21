@@ -45,7 +45,7 @@
         </button>
         <div class="text-center items-center p-4">
             <h2>{station.name}</h2>
-            {#if (station.solution.length != undefined)}
+            {#if (station.solution != undefined)}
                 <input required type="text" name="solution" id="stationsolution" maxlength={station.solution.length} spellcheck="false" bind:value={txt} placeholder="Lösung"
                     autocapitalize="none" autocomplete="off"
                     class="w-full my-1 rounded-lg block px-1 py-0.5
