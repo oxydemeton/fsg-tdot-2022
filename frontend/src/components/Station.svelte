@@ -34,7 +34,7 @@
         @apply w-full;
     }
 </style>
-<div class="absolute w-36 h-36" style="left: {station.pos.x}%; top: {station.pos.y}%;">
+<div class="absolute w-32 h-32" style="left: {station.pos.x}%; top: {station.pos.y}%;">
     <button on:click={toggle_popup}>
         <img src={current_lock()} alt={"Station: " + station.name}>
     </button>
