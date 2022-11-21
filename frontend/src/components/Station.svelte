@@ -37,12 +37,12 @@
     }
 </style>
 <div class="absolute w-32 h-32" style="left: {station.pos.x}%; top: {station.pos.y}%;">
-    <button on:click={toggle_popup} class="static w-32">
-        <img src={current_lock()} alt={"Station: " + station.name} class="w-full">
+    <button on:click={toggle_popup} class="static w-20 h-20">
+        <img src={current_lock()} alt={"Station: " + station.name} class="w-20">
         {#if (station.floor < floor)}
-            <img src={Arrow} alt="Tieferes Geschoss" class="rotate-180 w-4 h-8 top-1/2 left-1/2"/>
+            <img src={Arrow} alt="Tieferes Geschoss" class="rotate-180 w-6 h-8 -bottom-6 -left-6"/>
         {:else if (station.floor > floor)}
-            <img src={Arrow} alt="Tieferes Geschoss" class="w-4 h-8 top-1/2 left-1/2"/>
+            <img src={Arrow} alt="Tieferes Geschoss" class="w-6 h-8 -bottom-6 -left-6"/>
         {/if}
     </button>
     {#if (popup())}

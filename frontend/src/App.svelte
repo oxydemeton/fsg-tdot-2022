@@ -53,6 +53,6 @@
         background-color: rgb(46, 46, 46)
     }
     main {
-        @apply overflow-hidden h-[100vh] w-[133vh] relative;
+        @apply overflow-hidden h-[100vh] w-[133vh] relative select-none;
     }
 </style>

@@ -7,7 +7,7 @@ const default_status = -1
 const beginning_stations: Station[] = [
     {
         name: "Mensa",
-        pos: {x: 0, y: 85},
+        pos: {x: 0, y: 80},
         status: 0,
         floor: 0
     }
@@ -17,7 +17,7 @@ const beginning_stations: Station[] = [
 const ending_stations: Station[]  = [
     {
         name: "Unterstufen Schulhof",
-        pos: {x: 20, y: 20},
+        pos: {x: 8, y: 25},
         desc: "Finde so paar Boxen",
         status: default_status,
         floor: 0
@@ -28,7 +28,7 @@ const ending_stations: Station[]  = [
 const general_stations: Station[]  = [
     {
         name: "Gesellschaftswissenschaften",
-        pos: {x: 30.5, y: 35},
+        pos: {x: 33, y: 35},
         solution: "Gesellschaft",
         status: default_status,
         floor: 0
@@ -42,27 +42,27 @@ const general_stations: Station[]  = [
     },
     {
         name: "Bücherei",
-        pos: {x: 50, y: 50},
+        pos: {x: 92, y: 72},
         status: default_status,
         floor: -1
     },
     {
         name: "Kunst und Musik",
-        pos: {x: 50, y:50},
+        pos: {x: 28, y:10},
         solution: "Ist das Kunst?",
         status: default_status,
         floor: 0
     },
     {
         name: "Naturwissenschaften",
-        pos: {x: 50, y: 50},
+        pos: {x: 92, y: 80},
         solution: "Natur",
         status: default_status,
         floor: 1
     },
     {
         name: "Informatik",
-        pos: {x: 50, y: 50},
+        pos: {x: 24, y: 35},
         status: default_status,
         floor: 1
     }
