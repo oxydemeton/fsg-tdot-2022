@@ -18,7 +18,7 @@ const ending_stations: Station[]  = [
     {
         name: "Unterstufen Schulhof",
         pos: {x: 8, y: 25},
-        desc: "Finde so paar Boxen",
+        desc: (group_id: number)=>"Finde so paar Boxen",
         status: default_status,
         floor: 0
     }
@@ -82,7 +82,7 @@ function general_group_station(group_id: number, station_num: number): number {
 
 //Id from general stations not all stations!
 function invert_general_station(id: number): number {
-    return general_stations.length - id
+    return general_stations.length - id +1
 }
 
 //Generating Station ID for station number and group

@@ -3,6 +3,6 @@ export interface Station {
     pos: {x: number, y:number}
     name: string
     status: number
-    desc?: string
+    desc?: (number) => string
     floor: number
 }
