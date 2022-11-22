@@ -5,11 +5,11 @@
     import Station from "./components/Station.svelte";
     import GroupSelector from "./components/GroupSelector.svelte";
 
-    for (let i = 0; i < group_count; i++) {
+    /*for (let i = 0; i < group_count; i++) {
         for (let j = 0; j < all_stations.length; j++) {
             console.log("gruppe: " + i + " " + all_stations[id_by_group_and_num(i, j)].name);
         }
-    }
+    }*/
     let floor = 0
 
     let group: number = -1
