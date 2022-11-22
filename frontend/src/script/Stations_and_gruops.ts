@@ -7,7 +7,7 @@ const default_status = -1
 const beginning_stations: Station[] = [
     {
         name: "Mensa",
-        pos: {x: 0, y: 80},
+        pos: {x: 2, y: 80},
         status: 0,
         floor: 0
     }

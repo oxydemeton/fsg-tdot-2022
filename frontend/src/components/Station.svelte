@@ -16,6 +16,13 @@
             return LockOpen
         }
     }
+    $: arrow_opacity = () => {
+        if (station.status === 0) {
+            return "1"
+        }else {
+            return ".7"
+        }
+    }
     let show_popup = false
     function toggle_popup() {
         if (station.status === 0) {
@@ -31,18 +38,22 @@
 
 	const dispatch = createEventDispatcher();
 </script>
+
 <style>
-    img {
-        @apply absolute;
+    .arrow {
+        @apply absolute w-6 h-8 top-2/3 -left-6;
     }
 </style>
+
 <div class="absolute w-32 h-32" style="left: {station.pos.x}%; top: {station.pos.y}%;">
-    <button on:click={toggle_popup} class="static w-20 h-20">
-        <img src={current_lock()} alt={"Station: " + station.name} class="w-20">
+    <button on:click={toggle_popup} class="static w-[4.5rem] h-fit">
+        <!--Lock-->
+        <img src={current_lock()} alt={"Station: " + station.name} class="w-full">
+        <!--Arrow-->
         {#if (station.floor < floor)}
-            <img src={Arrow} alt="Tieferes Geschoss" class="rotate-180 w-6 h-8 -bottom-6 -left-6"/>
+            <img src={Arrow} alt="Tieferes Geschoss" style="opacity: {arrow_opacity()};" class="arrow rotate-180"/>
         {:else if (station.floor > floor)}
-            <img src={Arrow} alt="Tieferes Geschoss" class="w-6 h-8 -bottom-6 -left-6"/>
+            <img src={Arrow} alt="Tieferes Geschoss" style="opacity: {arrow_opacity()};" class="arrow"/>
         {/if}
     </button>
     {#if (popup())}
