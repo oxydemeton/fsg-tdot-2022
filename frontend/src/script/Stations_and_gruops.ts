@@ -29,14 +29,14 @@ const general_stations: Station[]  = [
     {
         name: "Gesellschaftswissenschaften",
         pos: {x: 33, y: 35},
-        solution: "Gesellschaft",
+        solution: "FSG",
         status: default_status,
         floor: 0
     },
     {
         name: "Sprachwissenschaften",
         pos: {x: 55, y: 35},
-        solution: "Sowi",
+        solution: "FREMDSPRACHE",
         status: default_status,
         floor: 1
     },
@@ -49,14 +49,14 @@ const general_stations: Station[]  = [
     {
         name: "Kunst und Musik",
         pos: {x: 28, y:10},
-        solution: "Ist das Kunst?",
+        solution: "KULTUR",
         status: default_status,
         floor: 0
     },
     {
         name: "Naturwissenschaften",
         pos: {x: 92, y: 80},
-        solution: "Natur",
+        solution: "ELEMENTE",
         status: default_status,
         floor: 1
     },
