@@ -47,6 +47,8 @@ for (let i = 0; i < group_count; i++) {
       includeAssets: ['favicon.png', "./assets/"],
       workbox: {
         maximumFileSizeToCacheInBytes: 3000000,
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        cleanupOutdatedCaches: true
       },
       manifest: {
         name: "FSG Tdot",
@@ -56,6 +58,8 @@ for (let i = 0; i < group_count; i++) {
         lang: "de",
         shortcuts: shortcuts,
         icons: icons,
+        background_color: "#2E2E2E",
+        display: "standalone",
       }
     })
   ],

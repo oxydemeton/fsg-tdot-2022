@@ -6,13 +6,15 @@
     import LockClosed       from "./assets/SchlossNormal.png"
     import LockOpen         from "./assets/SchlossGrün.png"
     import LockSelected     from "./assets/SchlossRot.png"
+    import Reset     from "./assets/reset.png"
     const images = [
         Eg,
         Og,
         Ug,
         LockClosed,
         LockOpen,
-        LockSelected
+        LockSelected,
+        Reset
     ]
 </script>
 

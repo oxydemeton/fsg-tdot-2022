@@ -16,9 +16,34 @@ const beginning_stations: Station[] = [
 //Stations all groups end with
 const ending_stations: Station[]  = [
     {
-        name: "Unterstufen Schulhof",
+        name: "Schulhof",
         pos: {x: 8, y: 25},
-        desc: (group_id: number)=>"Finde so paar Boxen",
+        desc: (group_id: number)=>{
+            const gen_desc = (schulhof: string, farbe: string): string => {
+                return "Finde eine " + " Box auf dem "
+            }
+            switch (group_id) {
+                case 0:
+                    return gen_desc("Mittlerer schulhof", "rote")
+                case 1:
+                    return gen_desc("Mittlerer schulhof", "blaue")
+                case 2:
+                    return gen_desc("Mittlerer schulhof", "gelbe")
+                case 3:
+                    return gen_desc("Mittlerer schulhof", "grüne")
+                case 4:
+                    return gen_desc("Südlichen schulhof", "rote")
+                case 5:
+                    return gen_desc("Südlichen schulhof", "blaue")
+                case 6:
+                    return gen_desc("Südlichen schulhof", "gelbe")
+                case 7:
+                    return gen_desc("Südlichen schulhof", "grüne")
+                default:
+                    console.error("Unkown Group ID: " + group_id);
+                    return "Geht direkt weiter zur Sporthalle."
+            }
+        },
         status: default_status,
         floor: 0
     }
