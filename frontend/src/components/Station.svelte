@@ -7,6 +7,7 @@
     import type {Station as StationApp} from "../script/Station"
     export let station: StationApp
     export let floor: number
+    export let group: string
     $: current_lock = () => {
         if (station.status === 0) {
             return LockSelected
@@ -57,6 +58,6 @@
         {/if}
     </button>
     {#if (popup())}
-        <StationPopup station={station} on:done={()=>dispatch("done")} on:close={toggle_popup}></StationPopup>
+        <StationPopup station={station} on:done={()=>dispatch("done")} bind:group={group} on:close={toggle_popup}></StationPopup>
     {/if}
 </div>

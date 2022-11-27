@@ -1,10 +1,10 @@
 <script lang="ts">
     import Header from "./Header.svelte";
-    import {all_stations, group_count, id_by_group_and_num} from "./script/Stations_and_gruops"
+    import {all_stations, default_status, group_count, id_by_group_and_num} from "./script/Stations_and_gruops"
     import Map from "./components/Map.svelte";
     import Station from "./components/Station.svelte";
     import GroupSelector from "./components/GroupSelector.svelte";
-    import Reset from "./assets/reset.png"
+    import Reset from "./assets/reset.svg"
 
     /*for (let i = 0; i < group_count; i++) {
         for (let j = 0; j < all_stations.length; j++) {
@@ -12,19 +12,26 @@
         }
     }*/
     let floor = 0
-
     let group: number = -1
     let station_num = 0
     function reset() {
         group = -1
         station_num = 0
+        all_stations.forEach((it, i, arr)=>{
+            arr[i].status = default_status
+            if (i === 0) arr[i].status = 0
+        })
+        console.log("RESET")
     }
     function station_done(station_id) {
-        station_num++   
-        all_stations[station_id].status = 1
-        all_stations[id_by_group_and_num(group, station_num)].status = 0
-        //Reset after finish
-        if(station_num >= all_stations.length) reset()
+        station_num++
+        //Reset after last station
+        if(station_num >= all_stations.length){
+            reset()
+        }else {
+            all_stations[station_id].status = 1
+            all_stations[id_by_group_and_num(group, station_num)].status = 0
+        }
     }
 
     //Code to execute on page Load
@@ -48,7 +55,7 @@
                 <img src={Reset} alt="Reset" class="w-full h-full"/>
             </button>
             {#each all_stations as sta, i (i)}
-                <Station station={sta} on:done={()=>station_done(i)} bind:floor={floor}></Station>
+                <Station bind:station={sta} on:done={()=>station_done(i)} bind:floor={floor} bind:group={group}></Station>
             {/each}
         {:else}
             <GroupSelector on:select={(g)=>group = g.detail}></GroupSelector>

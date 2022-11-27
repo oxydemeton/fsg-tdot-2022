@@ -2,23 +2,22 @@
     import type {Station} from "../script/Station";
 
     export let station: Station
+    export let group: string
     import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
     let txt = ""
-
+    let mistake = ""
     function submit(e){
         e.preventDefault()
         if (station.solution === undefined) {
             dispatch("done")
-        }
-        if (txt === station.solution) {
+        } else if (txt === station.solution) {
             dispatch("done")
-        }else {
+        } else {
             mistake = "Das Lösungswort ist falsch."
             txt = ""
         }
     }
-    let mistake = ""
 </script>
 <style>
     * {
@@ -45,9 +44,12 @@
         </button>
         <div class="text-center items-center p-4">
             <h2>{station.name}</h2>
+            {#if (station.desc)}
+                <h3 class="italic font-serif">{station.desc(group)}</h3>
+            {/if}
             {#if (station.solution != undefined)}
                 <input required type="text" name="solution" id="stationsolution" maxlength={station.solution.length} spellcheck="false" bind:value={txt} placeholder="Lösung"
-                    autocapitalize="none" autocomplete="off"
+                    autocapitalize="none" autocomplete="off" autofocus
                     class="w-full my-1 rounded-lg block px-1 py-0.5
                         text-white
                         bg-neutral-600/75 focus:bg-neutral-800/90

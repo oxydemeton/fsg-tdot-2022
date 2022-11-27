@@ -9,7 +9,8 @@ const beginning_stations: Station[] = [
         name: "Mensa",
         pos: {x: 2, y: 80},
         status: 0,
-        floor: 0
+        floor: 0,
+        desc: (_)=>"Los geht's!"
     }
 ]
 
@@ -20,7 +21,7 @@ const ending_stations: Station[]  = [
         pos: {x: 8, y: 25},
         desc: (group_id: number)=>{
             const gen_desc = (schulhof: string, farbe: string): string => {
-                return "Finde eine " + " Box auf dem "
+                return "Finde eine " + farbe + " Box auf dem " + schulhof
             }
             switch (group_id) {
                 case 0:
@@ -68,6 +69,7 @@ const general_stations: Station[]  = [
     {
         name: "Bücherei",
         pos: {x: 92, y: 72},
+        desc: (_)=>"Dies ist eine optionale Station",
         status: default_status,
         floor: -1
     },
@@ -89,6 +91,7 @@ const general_stations: Station[]  = [
         name: "Informatik",
         pos: {x: 24, y: 35},
         status: default_status,
+        desc: (_)=>"Dies ist eine optionale Station",
         floor: 1
     }
 ]
@@ -124,4 +127,4 @@ function id_by_group_and_num(group_id: number, station_num: number): number {
     return general_group_station(group_id, station_num)
 }
 
-export {all_stations, id_by_group_and_num}
+export {all_stations, id_by_group_and_num, default_status}
