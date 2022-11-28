@@ -33,13 +33,13 @@ const ending_stations: Station[]  = [
                 case 3:
                     return gen_desc("Mittlerer schulhof", "grüne")
                 case 4:
-                    return gen_desc("Südlichen schulhof", "rote")
+                    return gen_desc("Nördlicher schulhof", "rote")
                 case 5:
-                    return gen_desc("Südlichen schulhof", "blaue")
+                    return gen_desc("Nördlicher schulhof", "blaue")
                 case 6:
-                    return gen_desc("Südlichen schulhof", "gelbe")
+                    return gen_desc("Nördlicher schulhof", "gelbe")
                 case 7:
-                    return gen_desc("Südlichen schulhof", "grüne")
+                    return gen_desc("Nördlicher schulhof", "grüne")
                 default:
                     console.error("Unkown Group ID: " + group_id);
                     return "Geht direkt weiter zur Sporthalle."
@@ -96,8 +96,8 @@ const all_stations = beginning_stations.concat(general_stations).concat(ending_s
 
 //Local function to generate general_id by group and inner general station count
 function general_group_station(group_id: number, station_num: number): number {
-    const general_station = (station_num - beginning_stations.length) % general_stations.length
-    if(group_id > group_count/2) return invert_general_station(general_station) + beginning_stations.length
+    const general_station = (group_id + station_num - beginning_stations.length) % general_stations.length
+    if (group_id > group_count/2) return invert_general_station(general_station) - ending_stations.length //+ beginning_stations.length
     else return general_station + beginning_stations.length
 }
 
