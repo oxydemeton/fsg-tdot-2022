@@ -83,15 +83,8 @@ const general_stations: Station[]  = [
     {
         name: "Naturwissenschaften",
         pos: {x: 92, y: 80},
-        solution: "ELEMENTE",
+        solution: "145",
         status: default_status,
-        floor: 1
-    },
-    {
-        name: "Informatik",
-        pos: {x: 24, y: 35},
-        status: default_status,
-        desc: (_)=>"Dies ist eine optionale Station",
         floor: 1
     }
 ]
