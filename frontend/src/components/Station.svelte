@@ -9,6 +9,7 @@
     export let floor: number
     export let group: number
     export let last: boolean = false
+    //Selecting correct Image to be shown
     $: current_lock = () => {
         if (station.status === 0) {
             return LockSelected
@@ -18,6 +19,7 @@
             return LockOpen
         }
     }
+    //Calculated Opacity of the arrow indicating the level whether the station is the current one or not
     $: arrow_opacity = () => {
         if (station.status === 0) {
             return "1"
@@ -26,12 +28,13 @@
         }
     }
     let show_popup = false
+    //Function on click of the Lock
     function toggle_popup() {
         if (station.status === 0) {
             show_popup = !show_popup
         }
     }
-
+    //Whether the station popup should be shown
     $: popup = () => {
         return station.status === 0 && show_popup
     }

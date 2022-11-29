@@ -1,8 +1,9 @@
 import type {Station} from "./Station"
 
+//Total count of groups wich exist
 const group_count = 8
 
-//Stations all Groups start with
+//Status all Groups start with
 const default_status = -1
 const beginning_stations: Station[] = [
     {
@@ -23,6 +24,8 @@ const ending_stations: Station[]  = [
             const gen_desc = (schulhof: string): string => {
                 return "Finde zwei Boxen auf dem " + schulhof + " mit der aufschrift: " + (group_id + 1)
             }
+            //Changes need to be made here if the group count changes
+            console.assert(group_count === 8)
             switch (group_id) {
                 case 0:
                     return gen_desc("Südlicher Schulhof")

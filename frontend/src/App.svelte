@@ -6,6 +6,7 @@
     import GroupSelector from "./components/GroupSelector.svelte";
     import Reset from "./assets/reset.png"
 
+    //Loop to log the station order of each group
     /*for (let i = 0; i < group_count; i++) {
         for (let j = 0; j < all_stations.length; j++) {
             console.log("gruppe: " + i + " " + all_stations[id_by_group_and_num(i, j)].name);
@@ -14,6 +15,7 @@
     let floor = 0
     let group: number = -1
     let station_num = 0
+    //Function called on the reset button and when the tour is finished
     function reset() {
         group = -1
         station_num = 0
@@ -23,6 +25,7 @@
         })
         console.log("RESET")
     }
+    //Function to be called if the a station is done
     function station_done(station_id) {
         station_num++
         //Reset after last station
@@ -40,6 +43,7 @@
         const name = t.split("=")[0]
         hash_params[name] = t.split("=")[1]
     })
+    //If the group is given as a parameter use it, otherwise show selector
     if (!isNaN(Number(hash_params["group"]))) {
         group = Number(hash_params["group"]) % group_count
     }

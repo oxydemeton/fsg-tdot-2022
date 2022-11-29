@@ -1,13 +1,16 @@
 <script lang="ts">
     import type {Station} from "../script/Station";
-
     export let station: Station
     export let group: number
     export let last: boolean = false
     import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
+    //User input
     let txt = ""
+    //Text shown as error message
     let mistake = ""
+
+    //Check solution if needed and if correct trigger event
     function submit(e){
         e.preventDefault()
         if (station.solution === undefined) {
@@ -19,6 +22,7 @@
             txt = ""
         }
     }
+    //Text shown on submit button based on different conditions
     $: btn_txt = () => {
         if (last) return "Neustarten"
         else if (station.solution) return "Lösung Prüfen"
