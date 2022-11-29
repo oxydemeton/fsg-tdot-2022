@@ -8,6 +8,7 @@
     export let station: StationApp
     export let floor: number
     export let group: number
+    export let last: boolean = false
     $: current_lock = () => {
         if (station.status === 0) {
             return LockSelected
@@ -58,6 +59,6 @@
         {/if}
     </button>
     {#if (popup())}
-        <StationPopup station={station} on:done={()=>dispatch("done")} bind:group={group} on:close={toggle_popup}></StationPopup>
+        <StationPopup station={station} on:done={()=>dispatch("done")} bind:group={group} on:close={toggle_popup} bind:last={last}></StationPopup>
     {/if}
 </div>

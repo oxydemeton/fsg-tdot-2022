@@ -3,6 +3,7 @@
 
     export let station: Station
     export let group: number
+    export let last: boolean = false
     import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
     let txt = ""
@@ -17,6 +18,11 @@
             mistake = "Das Lösungswort ist falsch."
             txt = ""
         }
+    }
+    $: btn_txt = () => {
+        if (last) return "Neustarten"
+        else if (station.solution) return "Lösung Prüfen"
+        else return "Weiter"
     }
 </script>
 <style>
@@ -47,7 +53,7 @@
             {#if (station.desc)}
                 <h3 class="italic font-serif">{station.desc(group)}</h3>
             {/if}
-            {#if (station.solution != undefined)}
+            {#if (station.solution)}
                 <input required type="text" name="solution" id="stationsolution" maxlength={station.solution.length} spellcheck="false" bind:value={txt} placeholder="Lösung"
                     autocapitalize="none" autocomplete="off" autofocus
                     class="w-full my-1 rounded-lg block px-1 py-0.5
@@ -57,12 +63,8 @@
                         placeholder-gray-300 placeholder:italic placeholder:font-light
                         focus:ring-4 ring-fsg
                     ">
-                <button type="submit" class="submit-btn">
-                    Check
-                </button>
-            {:else}
-                <button type="submit" class="submit-btn"> Weiter </button>
             {/if}
+            <button type="submit" class="submit-btn"> {btn_txt()} </button>
             <br>
             <span class="italic font-light text-black bg-red-600/20 rounded-xl m-1 select-all">{mistake}</span>
         </div>

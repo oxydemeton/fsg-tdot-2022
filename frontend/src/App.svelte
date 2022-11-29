@@ -55,7 +55,7 @@
                 <img src={Reset} alt="Reset" class="w-full h-full"/>
             </button>
             {#each all_stations as sta, i (i)}
-                <Station bind:station={sta} on:done={()=>station_done(i)} bind:floor={floor} bind:group={group}></Station>
+                <Station bind:station={sta} on:done={()=>station_done(i)} bind:floor={floor} bind:group={group} last={i === (all_stations.length -1)}></Station>
             {/each}
         {:else}
             <GroupSelector on:select={(g)=>group = g.detail}></GroupSelector>
