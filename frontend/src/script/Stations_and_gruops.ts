@@ -21,7 +21,7 @@ const ending_stations: Station[]  = [
         pos: {x: 8, y: 25},
         desc: (group_id: number)=>{
             const gen_desc = (schulhof: string): string => {
-                return "Finde zwei Boxen auf dem " + schulhof + " mit der aufschrift: " + group_id
+                return "Finde zwei Boxen auf dem " + schulhof + " mit der aufschrift: " + (group_id + 1)
             }
             switch (group_id) {
                 case 0:
