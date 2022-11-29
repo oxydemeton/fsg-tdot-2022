@@ -24,7 +24,7 @@
         if (station.status === 0) {
             return "1"
         }else {
-            return ".7"
+            return "0.6"
         }
     }
     let show_popup = false
@@ -53,7 +53,7 @@
 <div class="absolute w-28 h-28" style="left: {station.pos.x}%; top: {station.pos.y}%;">
     <button on:click={toggle_popup} class="static w-[4rem] h-fit">
         <!--Lock-->
-        <img src={current_lock()} alt={"Station: " + station.name} class="w-full" style={station.floor === floor ? "": "opacity: .8;"}>
+        <img src={current_lock()} alt={"Station: " + station.name} class="w-full" style={station.floor === floor ? "": "opacity: .5;"}>
         <!--Arrow-->
         {#if (station.floor < floor)}
             <img src={Arrow} alt="Tieferes Geschoss" style="opacity: {arrow_opacity()};" class="arrow rotate-180"/>
