@@ -28,6 +28,6 @@ button {
 </style>
 <img id="Map" src={compute_current_img()} alt="Map">
 <div id="button-box">
-    <button type="button" on:click={()=>floor_lvl++} disabled={floor_lvl>0} class="disabled:bg-neutral-500 disabled:text-neutral-700"> /\</button> <br>
-    <button type="button" on:click={()=>floor_lvl--} disabled={floor_lvl<0} class="disabled:bg-neutral-500 disabled:text-neutral-700"> \/</button>
+    <button type="button" on:click={()=>floor_lvl++} disabled={floor_lvl>0} class="disabled:bg-neutral-500 disabled:text-neutral-700 enabled:hover:ring-4 ring-fsg"> /\</button> <br>
+    <button type="button" on:click={()=>floor_lvl--} disabled={floor_lvl<0} class="disabled:bg-neutral-500 disabled:text-neutral-700 enabled:hover:ring-4 ring-fsg"> \/</button>
 </div>

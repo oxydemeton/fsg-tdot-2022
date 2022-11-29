@@ -1,25 +1,55 @@
 import type {Station} from "./Station"
 
+//Total count of groups wich exist
 const group_count = 8
 
-//Stations all Groups start with
+//Status all Groups start with
 const default_status = -1
 const beginning_stations: Station[] = [
     {
         name: "Mensa",
-        pos: {x: 10, y: 70},
-        solution: "",
-        status: 0
+        pos: {x: 2, y: 60},
+        status: 0,
+        floor: 0,
+        desc: (_)=>"Los geht's!"
     }
 ]
 
 //Stations all groups end with
 const ending_stations: Station[]  = [
     {
-        name: "Sporthalle",
-        pos: {x: 90, y: 60},
-        solution: "",
-        status: default_status
+        name: "Schulhof",
+        pos: {x: 8, y: 25},
+        desc: (group_id: number)=>{
+            const gen_desc = (schulhof: string): string => {
+                return "Finde zwei Boxen auf dem " + schulhof + " mit der aufschrift: " + (group_id + 1)
+            }
+            //Changes need to be made here if the group count changes
+            console.assert(group_count === 8)
+            switch (group_id) {
+                case 0:
+                    return gen_desc("Südlicher Schulhof")
+                case 1:
+                    return gen_desc("Südlicher Schulhof")
+                case 2:
+                    return gen_desc("Südlicher Schulhof")
+                case 3:
+                    return gen_desc("Mittlerer Schulhof")
+                case 4:
+                    return gen_desc("Mittlerer Schulhof")
+                case 5:
+                    return gen_desc("Mittlerer Schulhof")
+                case 6:
+                    return gen_desc("Nördlicher schulhof")
+                case 7:
+                    return gen_desc("Nördlicher schulhof")
+                default:
+                    console.error("Unkown Group ID: " + group_id);
+                    return "Geht direkt weiter zur Sporthalle."
+            }
+        },
+        status: default_status,
+        floor: 0
     }
 ]
 
@@ -27,39 +57,38 @@ const ending_stations: Station[]  = [
 const general_stations: Station[]  = [
     {
         name: "Gesellschaftswissenschaften",
-        pos: {x: 10, y: 10},
-        solution: "Gesellschaft",
-        status: default_status
+        pos: {x: 33, y: 35},
+        solution: "FSG",
+        status: default_status,
+        floor: 0
     },
     {
         name: "Sprachwissenschaften",
-        pos: {x: 20, y: 20},
-        solution: "Sowi",
-        status: default_status
+        pos: {x: 55, y: 35},
+        solution: "FREMDSPRACHE",
+        status: default_status,
+        floor: 1
     },
     {
         name: "Bücherei",
-        pos: {x: 80, y: 90},
-        solution: "",
-        status: default_status
+        pos: {x: 94, y: 69},
+        desc: (_)=>"Dies ist eine optionale Station",
+        status: default_status,
+        floor: -1
     },
     {
         name: "Kunst und Musik",
-        pos: {x: 15, y:15},
-        solution: "Ist das Kunst?",
-        status: default_status
+        pos: {x: 28, y:10},
+        solution: "KULTUR",
+        status: default_status,
+        floor: 0
     },
     {
         name: "Naturwissenschaften",
-        pos: {x: 70, y: 80},
-        solution: "Natur",
-        status: default_status
-    },
-    {
-        name: "Informatik",
-        pos: {x: 50, y: 50},
-        solution: "",
-        status: default_status
+        pos: {x: 92, y: 80},
+        solution: "145",
+        status: default_status,
+        floor: 1
     }
 ]
 //Export constants
@@ -70,8 +99,14 @@ const all_stations = beginning_stations.concat(general_stations).concat(ending_s
 
 //Local function to generate general_id by group and inner general station count
 function general_group_station(group_id: number, station_num: number): number {
-    const first_general_station = group_id % general_stations.length
-    return (first_general_station + station_num) % general_stations.length
+    const general_station = (group_id + station_num - beginning_stations.length) % general_stations.length
+    if (group_id > group_count/2) return invert_general_station(general_station) - ending_stations.length //+ beginning_stations.length
+    else return general_station + beginning_stations.length
+}
+
+//Id from general stations not all stations!
+function invert_general_station(id: number): number {
+    return general_stations.length - id +1
 }
 
 //Generating Station ID for station number and group
@@ -88,4 +123,4 @@ function id_by_group_and_num(group_id: number, station_num: number): number {
     return general_group_station(group_id, station_num)
 }
 
-export {all_stations, id_by_group_and_num}
+export {all_stations, id_by_group_and_num, default_status}
