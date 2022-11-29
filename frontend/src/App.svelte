@@ -4,7 +4,7 @@
     import Map from "./components/Map.svelte";
     import Station from "./components/Station.svelte";
     import GroupSelector from "./components/GroupSelector.svelte";
-    import Reset from "./assets/reset.svg"
+    import Reset from "./assets/reset.png"
 
     /*for (let i = 0; i < group_count; i++) {
         for (let j = 0; j < all_stations.length; j++) {

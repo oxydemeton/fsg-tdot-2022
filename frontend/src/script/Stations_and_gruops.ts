@@ -7,7 +7,7 @@ const default_status = -1
 const beginning_stations: Station[] = [
     {
         name: "Mensa",
-        pos: {x: 2, y: 80},
+        pos: {x: 2, y: 60},
         status: 0,
         floor: 0,
         desc: (_)=>"Los geht's!"
@@ -20,26 +20,26 @@ const ending_stations: Station[]  = [
         name: "Schulhof",
         pos: {x: 8, y: 25},
         desc: (group_id: number)=>{
-            const gen_desc = (schulhof: string, farbe: string): string => {
-                return "Finde eine " + farbe + " Box auf dem " + schulhof
+            const gen_desc = (schulhof: string): string => {
+                return "Finde zwei Boxen auf dem " + schulhof + " mit der aufschrift: " + group_id
             }
             switch (group_id) {
                 case 0:
-                    return gen_desc("Mittlerer schulhof", "rote")
+                    return gen_desc("Südlicher Schulhof")
                 case 1:
-                    return gen_desc("Mittlerer schulhof", "blaue")
+                    return gen_desc("Südlicher Schulhof")
                 case 2:
-                    return gen_desc("Mittlerer schulhof", "gelbe")
+                    return gen_desc("Südlicher Schulhof")
                 case 3:
-                    return gen_desc("Mittlerer schulhof", "grüne")
+                    return gen_desc("Mittlerer Schulhof")
                 case 4:
-                    return gen_desc("Nördlicher schulhof", "rote")
+                    return gen_desc("Mittlerer Schulhof")
                 case 5:
-                    return gen_desc("Nördlicher schulhof", "blaue")
+                    return gen_desc("Mittlerer Schulhof")
                 case 6:
-                    return gen_desc("Nördlicher schulhof", "gelbe")
+                    return gen_desc("Nördlicher schulhof")
                 case 7:
-                    return gen_desc("Nördlicher schulhof", "grüne")
+                    return gen_desc("Nördlicher schulhof")
                 default:
                     console.error("Unkown Group ID: " + group_id);
                     return "Geht direkt weiter zur Sporthalle."
@@ -68,7 +68,7 @@ const general_stations: Station[]  = [
     },
     {
         name: "Bücherei",
-        pos: {x: 92, y: 72},
+        pos: {x: 94, y: 69},
         desc: (_)=>"Dies ist eine optionale Station",
         status: default_status,
         floor: -1

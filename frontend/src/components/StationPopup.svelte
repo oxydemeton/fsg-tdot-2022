@@ -2,7 +2,7 @@
     import type {Station} from "../script/Station";
 
     export let station: Station
-    export let group: string
+    export let group: number
     import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
     let txt = ""

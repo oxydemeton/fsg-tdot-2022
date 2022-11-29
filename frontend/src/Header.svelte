@@ -6,7 +6,7 @@
     import LockClosed       from "./assets/SchlossNormal.png"
     import LockOpen         from "./assets/SchlossGrün.png"
     import LockSelected     from "./assets/SchlossRot.png"
-    import Reset            from "./assets/reset.svg"
+    import Reset            from "./assets/reset.png"
     const images = [
         Eg,
         Og,
@@ -32,7 +32,6 @@
     <link rel="apple-touch-icon" href="favicon.png" type="image/png">
 
     <meta name="keywords"           content="FSG, Geldern, Tdot, Tag der offenen Tür, Friedrich, Spee, Gymnasium, 2022">
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="description"        content="Schülerführung für neue Schüler am FSG für den 03.12.2022 am Tag der offenen Tür.">
     <meta name="application-name"   content="Fsg Tdot guide 2022">
     <meta name="author"             content="github.com/oxydemeton">

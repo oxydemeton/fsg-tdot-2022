@@ -7,7 +7,7 @@
     import type {Station as StationApp} from "../script/Station"
     export let station: StationApp
     export let floor: number
-    export let group: string
+    export let group: number
     $: current_lock = () => {
         if (station.status === 0) {
             return LockSelected
@@ -42,12 +42,12 @@
 
 <style>
     .arrow {
-        @apply absolute w-6 h-8 top-2/3 -left-6;
+        @apply absolute w-4 h-6 top-2/3 -left-6;
     }
 </style>
 
-<div class="absolute w-32 h-32" style="left: {station.pos.x}%; top: {station.pos.y}%;">
-    <button on:click={toggle_popup} class="static w-[4.5rem] h-fit">
+<div class="absolute w-28 h-28" style="left: {station.pos.x}%; top: {station.pos.y}%;">
+    <button on:click={toggle_popup} class="static w-[4rem] h-fit">
         <!--Lock-->
         <img src={current_lock()} alt={"Station: " + station.name} class="w-full">
         <!--Arrow-->
