@@ -22,27 +22,27 @@ const ending_stations: Station[]  = [
         pos: {x: 8, y: 25},
         desc: (group_id: number)=>{
             const gen_desc = (schulhof: string): string => {
-                return "Finde zwei Boxen auf dem " + schulhof + " mit der aufschrift: " + (group_id + 1)
+                return "Finde zwei Boxen auf dem " + schulhof + " mit der Aufschrift: " + (group_id + 1)
             }
             //Changes need to be made here if the group count changes
             console.assert(group_count === 8)
             switch (group_id) {
                 case 0:
-                    return gen_desc("Südlicher Schulhof")
+                    return gen_desc("südlichen Schulhof")
                 case 1:
-                    return gen_desc("Südlicher Schulhof")
+                    return gen_desc("südlichen Schulhof")
                 case 2:
-                    return gen_desc("Südlicher Schulhof")
+                    return gen_desc("südlichen Schulhof")
                 case 3:
-                    return gen_desc("Mittlerer Schulhof")
+                    return gen_desc("mittleren Schulhof")
                 case 4:
-                    return gen_desc("Mittlerer Schulhof")
+                    return gen_desc("mittleren Schulhof")
                 case 5:
-                    return gen_desc("Mittlerer Schulhof")
+                    return gen_desc("mittleren Schulhof")
                 case 6:
-                    return gen_desc("Nördlicher schulhof")
+                    return gen_desc("nördlichen Schulhof")
                 case 7:
-                    return gen_desc("Nördlicher schulhof")
+                    return gen_desc("nördlichen Schulhof")
                 default:
                     console.error("Unkown Group ID: " + group_id);
                     return "Geht direkt weiter zur Sporthalle."
