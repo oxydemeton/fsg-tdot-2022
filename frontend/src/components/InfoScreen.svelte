@@ -143,7 +143,7 @@ const dispatch = createEventDispatcher();
         <details>
             <summary>Projekt Infos</summary>
             <p>
-                Diese ganze Website, inklusive der Karte und Symbole, wurde erstellt, im Rahmen eines Projektes von fünf Schülern. Das Projekt gibt es seit 2021 und wird seit dem auf den iPads der Gruppenführer der neuen Schüler genutzt. Es geht darum, dass jede Gruppe einen eigenen Laufplan erhält und dieses auf dem iPad abarbeitet. Die Gruppen erfüllen dann in allen Pflichtstationen ein Rätsel und erhalten ein Lösungswort, welches dann auf dem iPad benötigt wird, um die nächste Station frei zu schalten.
+                Diese ganze Website, inklusive der Karte und Symbole, wurde erstellt, im Rahmen eines Projektes von fünf Schülern. Das Projekt gibt es seit 2021 und wird auf den iPads der Gruppenführer der neuen Schüler genutzt. Es geht darum, dass jede Gruppe einen eigenen Laufplan erhält und dieses auf dem iPad abarbeitet. Die Gruppen erfüllen dann in allen Pflichtstationen ein Rätsel und erhalten ein Lösungswort, welches dann auf dem iPad benötigt wird, um die nächste Station frei zu schalten.
             </p>
         </details>
         <details class="text-center italic">
