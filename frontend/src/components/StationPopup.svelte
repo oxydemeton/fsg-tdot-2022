@@ -43,7 +43,10 @@
         @apply fixed top-0 left-0 flex justify-center items-center h-screen w-screen bg-light/50 z-20 backdrop-blur select-none;
     }
     h2 {
-        @apply text-3xl font-bold font-mono w-full text-center;
+        @apply text-5xl font-bold font-mono w-full text-center;
+    }
+    h3 {
+        @apply italic font-serif text-2xl;
     }
 </style>
 <dialog open>
@@ -55,13 +58,13 @@
         <div class="text-center items-center p-4">
             <h2>{station.name}</h2>
             {#if (station.desc)}
-                <h3 class="italic font-serif">{station.desc(group)}</h3>
+                <h3>{station.desc(group)}</h3>
             {/if}
             {#if (station.solution)}
                 <input required type="text" name="solution" id="stationsolution" maxlength={station.solution.length} spellcheck="false" bind:value={txt} placeholder="Lösung"
                     autocapitalize="none" autocomplete="off" autofocus
                     class="w-full my-1 rounded-lg block px-1 py-0.5
-                        text-white
+                        text-dark focus:text-white
                         bg-light focus:bg-main
                         font-light focus:font-medium
                         placeholder-dark placeholder:italic placeholder:font-medium
