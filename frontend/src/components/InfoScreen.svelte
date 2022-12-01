@@ -16,7 +16,7 @@ const dispatch = createEventDispatcher();
         @apply fixed top-0 left-0 flex justify-center items-center h-screen w-screen bg-light/50 z-20 backdrop-blur select-none;
     }
     .Info {
-        @apply w-1/2 h-2/3
+        @apply
             h-1/2 bg-main/70 backdrop-blur-3xl rounded-xl mt-1 p-8
             overflow-y-auto overflow-x-hidden
             text-2xl shadow-xl;
@@ -62,7 +62,7 @@ const dispatch = createEventDispatcher();
 </style>
 
 <dialog open>
-    <div class="Info">
+    <div class="Info w-2/3 xl:w-1/2">
         <button type="button" on:click={()=>dispatch("close")} class="
             rounded-xl text-2xl text-black bg-main w-12 h-12 font-extrabold font-mono hover:ring-4 ring-fsg text-center shadow-xl">
             X
