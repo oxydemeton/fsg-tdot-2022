@@ -51,7 +51,7 @@
 </style>
 
 <div class="absolute w-28 h-28" style="left: {station.pos.x}%; top: {station.pos.y}%;">
-    <button on:click={toggle_popup} class="static w-[4rem] h-fit">
+    <button on:click={toggle_popup} class="static w-[3.3rem] xl:w-16 h-fit">
         <!--Lock-->
         <img src={current_lock()} alt={"Station: " + station.name} class="w-full" style={station.floor === floor ? "": "opacity: .5;"}>
         <!--Arrow-->
