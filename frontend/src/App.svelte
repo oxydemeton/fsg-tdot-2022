@@ -58,7 +58,7 @@
         <Map bind:floor_lvl={floor}> </Map>
         <div id="Info">
             {#if (show_info)}
-                <InfoScreen></InfoScreen>
+                <InfoScreen on:close={()=>show_info=false}></InfoScreen>
             {:else}
                 <button on:click={()=>show_info = !show_info} class="absolute top-2 right-16 w-12 h-12" type="button">
                     <img src={InfoIcon} alt="Show Info">

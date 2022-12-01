@@ -5,6 +5,9 @@ import Spoiler from "./Spoiler.svelte";
 import LockGreen from "../assets/SchlossGrün.png"
 import LockRed from "../assets/SchlossRot.png"
 import LockDefault from "../assets/SchlossNormal.png"
+
+import { createEventDispatcher } from 'svelte';
+const dispatch = createEventDispatcher();
 </script>
 
 <style>
@@ -15,7 +18,7 @@ import LockDefault from "../assets/SchlossNormal.png"
         @apply w-1/2 h-2/3
             h-1/2 bg-main/70 backdrop-blur-3xl rounded-xl mt-1 p-8
             overflow-y-auto overflow-x-hidden
-            text-2xl;
+            text-2xl shadow-xl;
     }
     details {
         @apply m-1;
@@ -59,6 +62,10 @@ import LockDefault from "../assets/SchlossNormal.png"
 
 <dialog open>
     <div class="Info">
+        <button type="button" on:click={()=>dispatch("close")} class="
+            rounded-xl text-2xl text-black bg-main w-12 h-12 font-extrabold font-mono hover:ring-4 ring-fsg text-center shadow-xl">
+            X
+        </button>
         <h2>Info</h2>
         <br>
         <!--Map Info / Informationen zur Karte-->
