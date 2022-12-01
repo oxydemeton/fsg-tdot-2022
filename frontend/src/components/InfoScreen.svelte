@@ -111,11 +111,11 @@ const dispatch = createEventDispatcher();
                 </li>
                 <li class="inline w-full">
                     <img src={Arrow} alt="Rotes Schloss Symbol" class="icon">
-                    <span class="mark p-4">Station befindet ein oder mehrere Ebenen weiter oben</span>
+                    <span class="mark p-4">Station befindet sich ein oder mehrere Ebenen weiter oben</span>
                 </li>
                 <li class="inline w-full">
                     <img src={Arrow} alt="Rotes Schloss Symbol" class="icon rotate-180">
-                    <span class="mark p-4">Station befindet ein oder mehrere Ebenen weiter unten</span>
+                    <span class="mark p-4">Station befindet sich ein oder mehrere Ebenen weiter unten</span>
                 </li>
             </ul>
         </details>
@@ -129,7 +129,7 @@ const dispatch = createEventDispatcher();
                         <td class="italic">
                             <Spoiler class="inline-block">
                                 {#if (station.solution)}
-                                    "{station.solution}"
+                                    "{@html station.solution}"
                                 {:else}
                                     Es gibt keine Lösung
                                 {/if}
@@ -143,7 +143,7 @@ const dispatch = createEventDispatcher();
         <details>
             <summary>Projekt Infos</summary>
             <p>
-                Diese ganze Website, inklusive der Karte und Symbole, ist erstellt worden, im Rahmen eines Projektes von fünf Schülern. Das Projekt gibt es seit 2021 und wird seit dem auf den iPads der Führer in den Gruppen für die neuen Schüler genutzt. Grundlegend geht es darum, dass jede Gruppe einen eigenen Laufplan hat und dieses auf dem iPad abarbeitet. Die Gruppen erfüllen dann in allen Pflichtstationen ein Rätzel und erhalten ein Lösungswort, welches dann auf dem iPad benötigt wird, um die nächste Station frei zu schalten.
+                Diese ganze Website, inklusive der Karte und Symbole, wurde erstellt, im Rahmen eines Projektes von fünf Schülern. Das Projekt gibt es seit 2021 und wird seit dem auf den iPads der Gruppenführer der neuen Schüler genutzt. Es geht darum, dass jede Gruppe einen eigenen Laufplan erhält und dieses auf dem iPad abarbeitet. Die Gruppen erfüllen dann in allen Pflichtstationen ein Rätsel und erhalten ein Lösungswort, welches dann auf dem iPad benötigt wird, um die nächste Station frei zu schalten.
             </p>
         </details>
         <details class="text-center italic">
