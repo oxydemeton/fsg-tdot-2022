@@ -61,26 +61,6 @@ import LockDefault from "../assets/SchlossNormal.png"
     <div class="Info">
         <h2>Info</h2>
         <br>
-        <!--Solutions/Lösungen-->
-        <details>
-            <summary>Lösungen</summary>
-            <table>
-            {#each all_stations as station}
-                <tr class="" >
-                    <th class="">{station.name}:</th>
-                    <td class="italic">
-                    <Spoiler class="inline-block">
-                        {#if (station.solution)}
-                            "{station.solution}"
-                        {:else}
-                            Es gibt keine Lösung
-                        {/if}
-                    </Spoiler>
-                    </td>
-                <tr/>
-            {/each}
-            </table>
-        </details>
         <!--Map Info / Informationen zur Karte-->
         <details>
             <summary>Erklärung der Karte</summary>
@@ -122,6 +102,26 @@ import LockDefault from "../assets/SchlossNormal.png"
                     <span class="mark p-4">aktuelle Station</span>
                 </li>
             </ul>
+        </details>
+        <!--Solutions/Lösungen-->
+        <details>
+            <summary>Lösungen</summary>
+            <table>
+                {#each all_stations as station}
+                    <tr class="" >
+                        <th class="">{station.name}:</th>
+                        <td class="italic">
+                            <Spoiler class="inline-block">
+                                {#if (station.solution)}
+                                    "{station.solution}"
+                                {:else}
+                                    Es gibt keine Lösung
+                                {/if}
+                            </Spoiler>
+                        </td>
+                    <tr/>
+                {/each}
+            </table>
         </details>
         <!--Projekt Info-->
         <details>
