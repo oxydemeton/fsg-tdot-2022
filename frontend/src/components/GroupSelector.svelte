@@ -14,7 +14,7 @@
 <dialog open>
     <div class="w-full h-full grid grid-cols-2 gap-8">
         <h2 class="col-span-2 text-center text-5xl font-bold">
-            <span class="bg-neutral-800/80 text-neutral-100 px-4 pt-1 pb-2 rounded-full">Wähle eine Gruppe</span>
+            <span class="bg-neutral-800/80 text-neutral-100 px-4 pt-1 pb-2 rounded-full shadow-lg">Wähle eine Gruppe</span>
         </h2>
         {#each Array(group_count) as _, i (i)}
             <button class="
@@ -22,7 +22,7 @@
                 hover:text-neutral-300 text-neutral-50
                 w-full h-full rounded-2xl backdrop-blur-lg
                 text-4xl font-extrabold font-mono
-                hover:ring-4 ring-fsg"
+                hover:ring-4 ring-fsg shadow-lg"
                     on:click={()=>dispatch("select", i)}>
                 Gruppe {i+1}
             </button>

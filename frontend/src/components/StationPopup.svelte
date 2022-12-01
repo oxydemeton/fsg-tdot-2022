@@ -40,7 +40,7 @@
         @apply h-auto bg-main/70 backdrop-blur-3xl rounded-xl mt-1 p-4;
     }
     dialog {
-        @apply fixed top-0 left-0 flex justify-center items-center h-screen w-screen bg-light/50 z-20 backdrop-blur select-none;
+        @apply fixed top-0 left-0 flex justify-center items-center h-screen w-screen bg-light/50 z-20 backdrop-blur select-none shadow-xl;
     }
     h2 {
         @apply text-5xl font-bold font-mono w-full text-center;
@@ -52,7 +52,7 @@
 <dialog open>
     <form on:submit={submit} class="w-fit min-w-1/3 max-w-2/3">
         <button type="button" on:click={()=>dispatch("close")} class="
-            rounded-xl text-xl text-black bg-main w-7 h-7 font-extrabold font-mono hover:ring-4 ring-fsg text-center">
+            rounded-xl text-2xl text-black bg-main w-12 h-12 font-extrabold font-mono hover:ring-4 ring-fsg text-center shadow-md">
             X
         </button>
         <div class="text-center items-center p-4">
