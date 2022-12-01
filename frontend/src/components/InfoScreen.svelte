@@ -126,19 +126,17 @@ import LockDefault from "../assets/SchlossNormal.png"
         <!--Projekt Info-->
         <details>
             <summary>Projekt Infos</summary>
-            <h4 class="w-full">Allgemeines</h4>
             <p>
                 Diese ganze Website, inklusive der Karte und Symbole, ist erstellt worden, im Rahmen eines Projektes von fünf Schülern. Das Projekt gibt es seit 2021 und wird seit dem auf den iPads der Führer in den Gruppen für die neuen Schüler genutzt. Grundlegend geht es darum, dass jede Gruppe einen eigenen Laufplan hat und dieses auf dem iPad abarbeitet. Die Gruppen erfüllen dann in allen Pflichtstationen ein Rätzel und erhalten ein Lösungswort, welches dann auf dem iPad benötigt wird, um die nächste Station frei zu schalten.
             </p>
         </details>
-        <details class="text-center">
-            <summary>Resources</summary>
-            <h4>Relevante Links:</h4>
+        <details class="text-center italic">
+            <summary>Links</summary>
             <a href="https://github.com/oxydemeton/fsg-tdot-2022/" class="block hover:text-fsg">Source Code 2022</a>
             <a href="https://github.com/oxydemeton/fsg-tdot-2021/" class="block hover:text-fsg">Source Code 2021</a>
             <a href="https://tdot2022.mabla.name/" class="block hover:text-fsg">Archiv live Website 2022</a>
             <a href="https://tdot2021.mabla.name/" class="block hover:text-fsg">Archiv live Website 2021</a>
-            <span class="italic block">Lesen Sie die Dokumentation beim Sourcecode bevor Sie die 2021er live Website nutzen</span>
+            <span class="font-thin block">Lesen Sie die Dokumentation beim Sourcecode bevor Sie die 2021er live Website nutzen</span>
         </details>
     </div>
 </dialog>
