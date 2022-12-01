@@ -12,7 +12,7 @@ module.exports = {
         "map-red": "#A80000",
         "map-purple": "#7030A0",
         "map-gray": "#7F7F7F",
-        "map-orange": "#7030A0",
+        "map-orange": "#C55A11",
         "map-blue": "#406BB8"
       },
       minWidth: {
