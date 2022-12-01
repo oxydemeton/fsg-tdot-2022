@@ -5,6 +5,7 @@ import Spoiler from "./Spoiler.svelte";
 import LockGreen from "../assets/SchlossGrün.png"
 import LockRed from "../assets/SchlossRot.png"
 import LockDefault from "../assets/SchlossNormal.png"
+import Arrow from "../assets/arrow.svg"
 
 import { createEventDispatcher } from 'svelte';
 const dispatch = createEventDispatcher();
@@ -107,6 +108,14 @@ const dispatch = createEventDispatcher();
                 <li class="inline w-full">
                     <img src={LockRed} alt="Rotes Schloss Symbol" class="icon">
                     <span class="mark p-4">aktuelle Station</span>
+                </li>
+                <li class="inline w-full">
+                    <img src={Arrow} alt="Rotes Schloss Symbol" class="icon">
+                    <span class="mark p-4">Station befindet ein oder mehrere Ebenen weiter oben</span>
+                </li>
+                <li class="inline w-full">
+                    <img src={Arrow} alt="Rotes Schloss Symbol" class="icon rotate-180">
+                    <span class="mark p-4">Station befindet ein oder mehrere Ebenen weiter unten</span>
                 </li>
             </ul>
         </details>
