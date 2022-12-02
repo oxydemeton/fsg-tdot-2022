@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {group_count} from "../script/Stations_and_gruops";
+    import {group_count} from "../script/StationsGroupsConfig";
 
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();

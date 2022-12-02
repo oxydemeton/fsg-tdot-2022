@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import postcss from './postcss.config.cjs'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { VitePWA } from 'vite-plugin-pwa'
-import {group_count} from './src/script/Stations_and_gruops';
+import {group_count} from './src/script/StationsGroupsConfig';
 
 // https://vitejs.dev/config/
 const icons = [

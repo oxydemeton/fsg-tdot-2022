@@ -1,6 +1,6 @@
 <script lang="ts">
     import Header from "./Header.svelte";
-    import {all_stations, default_status, group_count, id_by_group_and_num} from "./script/Stations_and_gruops"
+    import {all_stations, default_status, group_count, id_by_group_and_num} from "./script/StationsGroupsConfig"
     import Map from "./components/Map.svelte";
     import Station from "./components/Station.svelte";
     import GroupSelector from "./components/GroupSelector.svelte";
