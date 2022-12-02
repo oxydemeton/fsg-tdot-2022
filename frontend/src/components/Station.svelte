@@ -2,7 +2,8 @@
     import LockClosed from "../assets/SchlossNormal.png"
     import LockOpen from "../assets/SchlossGrün.png"
     import LockSelected from "../assets/SchlossRot.png"
-    import Arrow from "../assets/arrow.svg"
+    import ArrowRed from "../assets/arrow_red.svg"
+    import ArrowGray from "../assets/arrow_gray.svg"
     import StationPopup from "./StationPopup.svelte";
     import type {Station as StationApp} from "../script/Station"
     export let station: StationApp
@@ -18,6 +19,9 @@
         }else {
             return LockOpen
         }
+    }
+    $: current_arrow = () => {
+        return station.status === 0 ? ArrowRed: ArrowGray
     }
     //Calculated Opacity of the arrow indicating the level whether the station is the current one or not
     $: arrow_opacity = () => {
@@ -56,9 +60,9 @@
         <img src={current_lock()} alt={"Station: " + station.name} class="w-full" style={station.floor === floor ? "": "opacity: .5;"}>
         <!--Arrow-->
         {#if (station.floor < floor)}
-            <img src={Arrow} alt="Tieferes Geschoss" style="opacity: {arrow_opacity()};" class="arrow rotate-180"/>
+            <img src={current_arrow()} alt="Tieferes Geschoss" style="opacity: {arrow_opacity()};" class="arrow rotate-180"/>
         {:else if (station.floor > floor)}
-            <img src={Arrow} alt="Tieferes Geschoss" style="opacity: {arrow_opacity()};" class="arrow"/>
+            <img src={current_arrow()} alt="Tieferes Geschoss" style="opacity: {arrow_opacity()};" class="arrow"/>
         {/if}
     </button>
     {#if (popup())}
