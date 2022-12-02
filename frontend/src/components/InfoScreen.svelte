@@ -96,16 +96,12 @@ const dispatch = createEventDispatcher();
                     <span class="mark p-4">WCs</span>
                 </li>
                 <li class="inline w-full">
-                    <div class="color bg-map-blue"></div>
-                    <span class="mark p-4">Bereiche aus anderen Ebenen</span>
-                </li>
-                <li class="inline w-full">
                     <img src={LockDefault} alt="Messing Schloss Symbol" class="icon">
                     <span class="mark p-4">zukünftige Station</span>
                 </li>
                 <li class="inline w-full">
-                    <img src={QR} alt="dort befindet sich ein Qr code" class="icon">
-                    <span class="mark p-4">zukünftige Station</span>
+                    <img src={QR} alt="Qr Code Symbol" class="icon">
+                    <span class="mark p-4">dort befindet sich ein QR-code zum scanen</span>
                 </li>
                 <li class="inline w-full">
                     <img src={LockGreen} alt="Grünes Schloss Symbol" class="icon">
@@ -116,19 +112,19 @@ const dispatch = createEventDispatcher();
                     <span class="mark p-4">aktuelle Station</span>
                 </li>
                 <li class="inline w-full">
-                    <img src={ArrowRed} alt="Rotes Schloss Symbol" class="icon">
+                    <img src={ArrowRed} alt="Roter Pfeil nach oben" class="icon">
                     <span class="mark p-4">Aktuelle Station befindet sich ein oder mehrere Ebenen weiter oben</span>
                 </li>
                 <li class="inline w-full">
-                    <img src={ArrowRed} alt="Rotes Schloss Symbol" class="icon rotate-180">
+                    <img src={ArrowRed} alt="roter Pfeil nach unten" class="icon rotate-180">
                     <span class="mark p-4">Aktuelle Station befindet sich ein oder mehrere Ebenen weiter unten</span>
                 </li>
                 <li class="inline w-full">
-                    <img src={ArrowGray} alt="Rotes Schloss Symbol" class="icon">
+                    <img src={ArrowGray} alt="Grauer Pfeil nach oben" class="icon">
                     <span class="mark p-4">Station befindet sich ein oder mehrere Ebenen weiter oben</span>
                 </li>
                 <li class="inline w-full">
-                    <img src={ArrowGray} alt="Rotes Schloss Symbol" class="icon rotate-180">
+                    <img src={ArrowGray} alt="Grauer Pfeil nach unten" class="icon rotate-180">
                     <span class="mark p-4">Station befindet sich ein oder mehrere Ebenen weiter unten</span>
                 </li>
             </ul>
