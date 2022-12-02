@@ -1,11 +1,12 @@
 <script lang="ts">
 
-import {all_stations} from "../script/Stations_and_gruops.js";
+import {all_stations} from "../script/StationsGroupsConfig.js";
 import Spoiler from "./Spoiler.svelte";
 import LockGreen from "../assets/SchlossGrün.png"
 import LockRed from "../assets/SchlossRot.png"
 import LockDefault from "../assets/SchlossNormal.png"
-import Arrow from "../assets/arrow.svg"
+import ArrowRed from "../assets/arrow_red.svg"
+import ArrowGray from "../assets/arrow_gray.svg"
 
 import { createEventDispatcher } from 'svelte';
 const dispatch = createEventDispatcher();
@@ -110,11 +111,19 @@ const dispatch = createEventDispatcher();
                     <span class="mark p-4">aktuelle Station</span>
                 </li>
                 <li class="inline w-full">
-                    <img src={Arrow} alt="Rotes Schloss Symbol" class="icon">
+                    <img src={ArrowRed} alt="Rotes Schloss Symbol" class="icon">
+                    <span class="mark p-4">Aktuelle Station befindet sich ein oder mehrere Ebenen weiter oben</span>
+                </li>
+                <li class="inline w-full">
+                    <img src={ArrowRed} alt="Rotes Schloss Symbol" class="icon rotate-180">
+                    <span class="mark p-4">Aktuelle Station befindet sich ein oder mehrere Ebenen weiter unten</span>
+                </li>
+                <li class="inline w-full">
+                    <img src={ArrowGray} alt="Rotes Schloss Symbol" class="icon">
                     <span class="mark p-4">Station befindet sich ein oder mehrere Ebenen weiter oben</span>
                 </li>
                 <li class="inline w-full">
-                    <img src={Arrow} alt="Rotes Schloss Symbol" class="icon rotate-180">
+                    <img src={ArrowGray} alt="Rotes Schloss Symbol" class="icon rotate-180">
                     <span class="mark p-4">Station befindet sich ein oder mehrere Ebenen weiter unten</span>
                 </li>
             </ul>
@@ -148,6 +157,7 @@ const dispatch = createEventDispatcher();
         </details>
         <details class="text-center italic">
             <summary>Links</summary>
+            <a href="https://www.fsggeldern.de" class="block hover:text-fsg">Fsg Geldern</a>
             <a href="https://github.com/oxydemeton/fsg-tdot-2022/" class="block hover:text-fsg">Source Code 2022</a>
             <a href="https://github.com/oxydemeton/fsg-tdot-2021/" class="block hover:text-fsg">Source Code 2021</a>
             <a href="https://tdot2022.mabla.name/" class="block hover:text-fsg">Archiv live Website 2022</a>
