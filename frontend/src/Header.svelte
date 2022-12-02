@@ -7,6 +7,8 @@
     import LockOpen         from "./assets/SchlossGrün.png"
     import LockSelected     from "./assets/SchlossRot.png"
     import Reset            from "./assets/reset.png"
+    import ArrowRed         from "./assets/arrow_red.svg"
+    import ArrowGray        from "./assets/arrow_gray.svg"
     const images = [
         Eg,
         Og,
@@ -14,7 +16,9 @@
         LockClosed,
         LockOpen,
         LockSelected,
-        Reset
+        Reset,
+        ArrowRed,
+        ArrowGray,
     ]
 </script>
 
