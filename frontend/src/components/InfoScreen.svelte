@@ -101,7 +101,7 @@ const dispatch = createEventDispatcher();
                 </li>
                 <li class="inline w-full">
                     <img src={QR} alt="Qr Code Symbol" class="icon">
-                    <span class="mark p-4">dort befindet sich ein QR-code zum scanen</span>
+                    <span class="mark p-4">dort befindet sich ein QR-code zum scannen</span>
                 </li>
                 <li class="inline w-full">
                     <img src={LockGreen} alt="Grünes Schloss Symbol" class="icon">
