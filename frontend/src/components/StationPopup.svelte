@@ -34,37 +34,40 @@
         @apply outline-0;
     }
     .submit-btn {
-        @apply rounded-lg bg-neutral-400/80 w-full p-0.5 my-1 border-2 border-neutral-800 font-semibold text-xl;
+        @apply rounded-lg bg-light/90 w-full p-0.5 my-1 border-2 border-dark font-semibold text-xl;
     }
     form {
-        @apply h-auto bg-neutral-500/70 rounded-xl mt-1 p-4;
+        @apply h-auto bg-main/70 backdrop-blur-3xl rounded-xl mt-1 p-4;
     }
     dialog {
-        @apply fixed top-0 left-0 flex justify-center items-center h-screen w-screen bg-neutral-600/50 z-20 backdrop-blur-sm select-none;
+        @apply fixed top-0 left-0 flex justify-center items-center h-screen w-screen bg-light/50 z-20 backdrop-blur select-none shadow-xl;
     }
     h2 {
-        @apply text-3xl font-bold font-mono w-full text-center;
+        @apply text-5xl font-bold font-mono w-full text-center;
+    }
+    h3 {
+        @apply italic font-serif text-2xl;
     }
 </style>
 <dialog open>
     <form on:submit={submit} class="w-fit min-w-1/3 max-w-2/3">
         <button type="button" on:click={()=>dispatch("close")} class="
-            rounded-xl text-xl bg-black/50 w-7 h-7 font-extrabold font-mono hover:ring-4 ring-fsg text-center">
+            rounded-xl text-2xl text-black bg-main w-12 h-12 font-extrabold font-mono hover:ring-4 ring-fsg text-center shadow-md">
             X
         </button>
         <div class="text-center items-center p-4">
             <h2>{station.name}</h2>
             {#if (station.desc)}
-                <h3 class="italic font-serif">{station.desc(group)}</h3>
+                <h3>{station.desc(group)}</h3>
             {/if}
             {#if (station.solution)}
                 <input required type="text" name="solution" id="stationsolution" maxlength={station.solution.length} spellcheck="false" bind:value={txt} placeholder="Lösung"
                     autocapitalize="none" autocomplete="off" autofocus
                     class="w-full my-1 rounded-lg block px-1 py-0.5
-                        text-white
-                        bg-neutral-600/75 focus:bg-neutral-800/90
+                        text-dark focus:text-white
+                        bg-light focus:bg-main
                         font-light focus:font-medium
-                        placeholder-gray-300 placeholder:italic placeholder:font-light
+                        placeholder-dark placeholder:italic placeholder:font-medium
                         focus:ring-4 ring-fsg
                     ">
             {/if}

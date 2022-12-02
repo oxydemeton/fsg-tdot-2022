@@ -4,8 +4,9 @@
     import Map from "./components/Map.svelte";
     import Station from "./components/Station.svelte";
     import GroupSelector from "./components/GroupSelector.svelte";
-    import Reset from "./assets/reset.png"
-
+    import ResetIcon from "./assets/reset.png"
+    import InfoIcon from "./assets/info.svg"
+    import InfoScreen from "./components/InfoScreen.svelte";
     //Loop to log the station order of each group
     /*for (let i = 0; i < group_count; i++) {
         for (let j = 0; j < all_stations.length; j++) {
@@ -15,6 +16,7 @@
     let floor = 0
     let group: number = -1
     let station_num = 0
+    let show_info = false
     //Function called on the reset button and when the tour is finished
     function reset() {
         group = -1
@@ -54,13 +56,24 @@
 <div id="bg">
     <main>
         <Map bind:floor_lvl={floor}> </Map>
+        <div id="Info">
+            {#if (show_info)}
+                <InfoScreen on:close={()=>show_info=false}></InfoScreen>
+            {:else}
+                <button on:click={()=>show_info = !show_info} class="absolute top-2 right-16 w-12 h-12" type="button">
+                    <img src={InfoIcon} alt="Show Info">
+                </button>
+            {/if}
+        </div>
         {#if group >= 0}
-            <button on:click={reset} class="absolute top-2 right-2 w-12 h-12">
-                <img src={Reset} alt="Reset" class="w-full h-full"/>
+            <button on:click={reset} class="absolute top-2 right-2 w-12 h-12" type="button">
+                <img src={ResetIcon} alt="Reset" class="w-full h-full"/>
             </button>
+            <div id="Stations">
             {#each all_stations as sta, i (i)}
                 <Station bind:station={sta} on:done={()=>station_done(i)} bind:floor={floor} bind:group={group} last={i === (all_stations.length -1)}></Station>
             {/each}
+            </div>
         {:else}
             <GroupSelector on:select={(g)=>group = g.detail}></GroupSelector>
         {/if}

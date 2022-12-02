@@ -4,7 +4,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'fsg': "#3e6fb4"
+        'fsg': "#3e6fb4",
+        'main': "#303033",
+        'dark': "#111113",
+        'light': "#ABABAD",
+        "map-green": "#4A7B3D",
+        "map-red": "#A80000",
+        "map-purple": "#7030A0",
+        "map-gray": "#7F7F7F",
+        "map-orange": "#C55A11",
+        "map-blue": "#406BB8"
       },
       minWidth: {
         '1/2': '50%',
