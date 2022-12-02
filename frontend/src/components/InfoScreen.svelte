@@ -7,6 +7,7 @@ import LockRed from "../assets/SchlossRot.png"
 import LockDefault from "../assets/SchlossNormal.png"
 import ArrowRed from "../assets/arrow_red.svg"
 import ArrowGray from "../assets/arrow_gray.svg"
+import QR from "../assets/qrcode.png"
 
 import { createEventDispatcher } from 'svelte';
 const dispatch = createEventDispatcher();
@@ -100,6 +101,10 @@ const dispatch = createEventDispatcher();
                 </li>
                 <li class="inline w-full">
                     <img src={LockDefault} alt="Messing Schloss Symbol" class="icon">
+                    <span class="mark p-4">zukünftige Station</span>
+                </li>
+                <li class="inline w-full">
+                    <img src={QR} alt="dort befindet sich ein Qr code" class="icon">
                     <span class="mark p-4">zukünftige Station</span>
                 </li>
                 <li class="inline w-full">

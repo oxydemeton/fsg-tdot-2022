@@ -9,6 +9,7 @@
     import Reset            from "./assets/reset.png"
     import ArrowRed         from "./assets/arrow_red.svg"
     import ArrowGray        from "./assets/arrow_gray.svg"
+    import QR               from "./assets/qrcode.png"
     const images = [
         Eg,
         Og,
@@ -19,6 +20,7 @@
         Reset,
         ArrowRed,
         ArrowGray,
+        QR,
     ]
 </script>
 
