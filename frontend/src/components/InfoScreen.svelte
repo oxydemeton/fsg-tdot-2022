@@ -2,9 +2,12 @@
 
 import {all_stations} from "../script/StationsGroupsConfig.js";
 import Spoiler from "./Spoiler.svelte";
-import LockGreen from "../assets/SchlossGrün.png"
-import LockRed from "../assets/SchlossRot.png"
-import LockDefault from "../assets/SchlossNormal.png"
+import LockGreen from "../assets/locks/SchlossGrün.png"
+import LockGreenWp from "../assets/locks/SchlossGrün.webp"
+import LockRed from "../assets/locks/SchlossRot.png"
+import LockRedWp from "../assets/locks/SchlossRot.webp"
+import LockDefault from "../assets/locks/SchlossNormal.png"
+import LockDefaultWp from "../assets/locks/SchlossNormal.webp"
 import ArrowRed from "../assets/arrow_red.svg"
 import ArrowGray from "../assets/arrow_gray.svg"
 import QR from "../assets/qrcode.png"
@@ -96,7 +99,10 @@ const dispatch = createEventDispatcher();
                     <span class="mark p-4">WCs</span>
                 </li>
                 <li class="inline w-full">
-                    <img src={LockDefault} alt="Messing Schloss Symbol" class="icon">
+                    <picture>
+                        <source srcset={LockDefaultWp} type="image/webp">
+                        <img src={LockDefault} alt="Messing Schloss Symbol" class="icon">
+                    </picture>
                     <span class="mark p-4">zukünftige Station</span>
                 </li>
                 <li class="inline w-full">
@@ -104,11 +110,17 @@ const dispatch = createEventDispatcher();
                     <span class="mark p-4">dort befindet sich ein QR-code zum scannen</span>
                 </li>
                 <li class="inline w-full">
-                    <img src={LockGreen} alt="Grünes Schloss Symbol" class="icon">
+                    <picture>
+                        <source srcset={LockGreenWp} type="image/webp">
+                        <img src={LockGreen} alt="Grünes Schloss Symbol" class="icon">
+                    </picture>
                     <span class="mark p-4">bereits erfüllte Station</span>
                 </li>
                 <li class="inline w-full">
-                    <img src={LockRed} alt="Rotes Schloss Symbol" class="icon">
+                    <picture>
+                        <source srcset={LockRedWp} type="image/webp">
+                        <img src={LockRed} alt="Rotes Schloss Symbol" class="icon">    
+                    </picture>
                     <span class="mark p-4">aktuelle Station</span>
                 </li>
                 <li class="inline w-full">

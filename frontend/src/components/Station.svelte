@@ -1,7 +1,10 @@
 <script lang="ts">
-    import LockClosed from "../assets/SchlossNormal.png"
-    import LockOpen from "../assets/SchlossGrün.png"
-    import LockSelected from "../assets/SchlossRot.png"
+    import LockClosed from "../assets/locks/SchlossNormal.png"
+    import LockClosedWp from "../assets/locks/SchlossNormal.webp"
+    import LockOpen from "../assets/locks/SchlossGrün.png"
+    import LockOpenWp from "../assets/locks/SchlossGrün.webp"
+    import LockSelected from "../assets/locks/SchlossRot.png"
+    import LockSelectedWp from "../assets/locks/SchlossRot.webp"
     import ArrowRed from "../assets/arrow_red.svg"
     import ArrowGray from "../assets/arrow_gray.svg"
     import StationPopup from "./StationPopup.svelte";
@@ -18,6 +21,15 @@
             return LockClosed
         }else {
             return LockOpen
+        }
+    }
+    $:current_lock_wp = () => {
+        if (station.status === 0) {
+            return LockSelectedWp
+        }else if (station.status < 0){
+            return LockClosedWp
+        }else {
+            return LockOpenWp
         }
     }
     $: current_arrow = () => {
@@ -57,7 +69,11 @@
 <div class="absolute w-28 h-28" style="left: {station.pos.x}%; top: {station.pos.y}%;">
     <button on:click={toggle_popup} class="static w-[3rem] xl:w-16 h-fit">
         <!--Lock-->
-        <img src={current_lock()} alt={"Station: " + station.name} class="w-full" style={station.floor === floor ? "": "opacity: .5;"}>
+        <picture>
+            <source srcset={current_lock_wp()} type="image/webp">
+            <img src={current_lock()} alt={"Station: " + station.name} class="w-full" style={station.floor === floor ? "": "opacity: .5;"}>
+        </picture>
+        
         <!--Arrow-->
         {#if (station.floor < floor)}
             <img src={current_arrow()} alt="Tieferes Geschoss" style="opacity: {arrow_opacity()};" class="arrow rotate-180"/>
