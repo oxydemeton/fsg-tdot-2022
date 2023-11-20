@@ -8,10 +8,13 @@
     import InfoIcon from "./assets/info.svg"
     import InfoScreen from "./components/InfoScreen.svelte";
     //Loop to log the station order of each group
-    /*for (let i = 0; i < group_count; i++) {
-        for (let j = 0; j < all_stations.length; j++) {
-            console.log("gruppe: " + i + " " + all_stations[id_by_group_and_num(i, j)].name);
+    /*for (let gr = 0; gr < group_count; gr++) {
+        const stations_in_order = []
+        for (let st = 0; st < all_stations.length; st++) {
+            stations_in_order.push(all_stations[id_by_group_and_num(gr, st)].name)
         }
+        console.log(`Group ${gr}`, stations_in_order);
+        
     }*/
     let floor = 0
     let group: number = -1

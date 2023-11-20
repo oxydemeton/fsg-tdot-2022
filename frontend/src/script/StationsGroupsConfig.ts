@@ -1,7 +1,7 @@
 import type {Station} from "./Station"
 
 //Total count of groups wich exist
-const group_count = 8
+const group_count = 12
 
 //Status all Groups start with
 const default_status = -1
