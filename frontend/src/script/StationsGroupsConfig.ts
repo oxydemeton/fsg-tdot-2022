@@ -18,37 +18,10 @@ const beginning_stations: Station[] = [
 //Stations all groups end with
 const ending_stations: Station[]  = [
     {
-        name: "Schulhof",
-        pos: {x: 8, y: 25},
-        desc: (group_id: number)=>{
-            const gen_desc = (schulhof: string): string => {
-                return "Finde zwei Boxen auf dem " + schulhof + " mit der Aufschrift: " + (group_id + 1)
-            }
-            //Changes need to be made here if the group count changes
-            console.assert(group_count === 8)
-            switch (group_id) {
-                case 0:
-                    return gen_desc("südlichen Schulhof")
-                case 1:
-                    return gen_desc("südlichen Schulhof")
-                case 2:
-                    return gen_desc("südlichen Schulhof")
-                case 3:
-                    return gen_desc("mittleren Schulhof")
-                case 4:
-                    return gen_desc("mittleren Schulhof")
-                case 5:
-                    return gen_desc("mittleren Schulhof")
-                case 6:
-                    return gen_desc("nördlichen Schulhof")
-                case 7:
-                    return gen_desc("nördlichen Schulhof")
-                default:
-                    console.error("Unkown Group ID: " + group_id);
-                    return "Geht direkt weiter zur Sporthalle."
-            }
-        },
+        name: "Sporthalle",
+        pos: {x: 95, y: 65},
         status: default_status,
+        desc: ()=>"Nach deraußen und dann gerade aus ->",
         floor: 0
     }
 ]
@@ -71,7 +44,7 @@ const general_stations: Station[]  = [
     },
     {
         name: "Bücherei",
-        pos: {x: 94, y: 69},
+        pos: {x: 94, y: 75},
         desc: (_)=>"Dies ist eine optionale Station",
         status: default_status,
         floor: -1
@@ -85,7 +58,7 @@ const general_stations: Station[]  = [
     },
     {
         name: "Naturwissenschaften",
-        pos: {x: 92, y: 80},
+        pos: {x: 92, y: 85},
         solution: "145",
         status: default_status,
         floor: 1

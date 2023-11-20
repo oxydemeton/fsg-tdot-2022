@@ -50,12 +50,12 @@
 
 <style>
     .arrow {
-        @apply absolute w-4 h-6 top-2/3 -left-6;
+        @apply absolute w-4 h-6 top-1/3 -left-6;
     }
 </style>
 
 <div class="absolute w-28 h-28" style="left: {station.pos.x}%; top: {station.pos.y}%;">
-    <button on:click={toggle_popup} class="static w-[3.3rem] xl:w-16 h-fit">
+    <button on:click={toggle_popup} class="static w-[3rem] xl:w-16 h-fit">
         <!--Lock-->
         <img src={current_lock()} alt={"Station: " + station.name} class="w-full" style={station.floor === floor ? "": "opacity: .5;"}>
         <!--Arrow-->

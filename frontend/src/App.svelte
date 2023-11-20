@@ -43,11 +43,21 @@
     const hash_params = {}
     window.location.hash.replace("#", "").split("&").forEach((t)=>{
         const name = t.split("=")[0]
-        hash_params[name] = t.split("=")[1]
+        if (t.split("=").length > 0) hash_params[name] = t.split("=")[1]
+        else hash_params[name] = true
     })
     //If the group is given as a parameter use it, otherwise show selector
     if (!isNaN(Number(hash_params["group"]))) {
         group = Number(hash_params["group"]) % group_count
+    }
+    console.log(Number(hash_params["station"]));
+    
+    if (!isNaN(Number(hash_params["station"]))) {
+        station_num = Number(hash_params["station"]) % all_stations.length
+        for (let i = 0; i < station_num; i++) {
+            all_stations[id_by_group_and_num(group, i)].status = 1
+        } 
+        all_stations[id_by_group_and_num(group, station_num)].status = 0
     }
 
 </script>
@@ -55,6 +65,7 @@
 <Header station={all_stations[id_by_group_and_num(group, station_num)].name}></Header>
 <div id="bg">
     <main>
+        {station_num}
         <Map bind:floor_lvl={floor}> </Map>
         <div id="Info">
             {#if (show_info)}
