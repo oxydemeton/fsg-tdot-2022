@@ -68,7 +68,6 @@
 <Header station={all_stations[id_by_group_and_num(group, station_num)].name}></Header>
 <div id="bg">
     <main>
-        {station_num}
         <Map bind:floor_lvl={floor}> </Map>
         <div id="Info">
             {#if (show_info)}
