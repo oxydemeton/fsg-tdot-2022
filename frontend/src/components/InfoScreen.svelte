@@ -149,13 +149,6 @@ const dispatch = createEventDispatcher();
                 {/each}
             </table>
         </details>
-        <!--Projekt Info-->
-        <details>
-            <summary>Projekt Infos</summary>
-            <p>
-                Diese ganze Website, inklusive der Karte und Symbole, wurde erstellt, im Rahmen eines Projektes von fünf Schülern. Das Projekt gibt es seit 2021 und wird auf den iPads der Gruppenführer der neuen Schüler genutzt. Es geht darum, dass jede Gruppe einen eigenen Laufplan erhält und dieses auf dem iPad abarbeitet. Die Gruppen erfüllen dann in allen Pflichtstationen ein Rätsel und erhalten ein Lösungswort, welches dann auf dem iPad benötigt wird, um die nächste Station frei zu schalten.
-            </p>
-        </details>
         <details class="text-center italic">
             <summary>Links</summary>
             <a href="https://www.fsggeldern.de" class="block hover:text-fsg">Fsg Geldern</a>
