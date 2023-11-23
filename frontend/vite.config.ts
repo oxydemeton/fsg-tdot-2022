@@ -47,7 +47,7 @@ for (let i = 0; i < group_count; i++) {
       includeAssets: ['favicon.png', "./assets/"],
       workbox: {
         maximumFileSizeToCacheInBytes: 3000000,
-        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,webp}'],
         cleanupOutdatedCaches: true
       },
       manifest: {
