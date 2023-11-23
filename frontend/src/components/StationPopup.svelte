@@ -13,9 +13,11 @@
     //Check solution if needed and if correct trigger event
     function submit(e){
         e.preventDefault()
+        console.log(txt);
+        
         if (station.solution === undefined) {
             dispatch("done")
-        } else if (txt === station.solution) {
+        } else if (station.solution(txt)) {
             dispatch("done")
         } else {
             mistake = "Das Lösungswort ist falsch."
@@ -61,7 +63,7 @@
                 <h3>{station.desc(group)}</h3>
             {/if}
             {#if (station.solution)}
-                <input required type="text" name="solution" id="stationsolution" maxlength={station.solution.length} spellcheck="false" bind:value={txt} placeholder="Lösung"
+                <input required type="text" name="solution" id="stationsolution" spellcheck="false" bind:value={txt} placeholder="Lösung"
                     autocapitalize="none" autocomplete="off" autofocus
                     class="w-full my-1 rounded-lg block px-1 py-0.5
                         text-dark focus:text-white

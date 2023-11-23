@@ -31,14 +31,14 @@ const general_stations: Station[]  = [
     {
         name: "Gesellschaftswissenschaften",
         pos: {x: 33, y: 35},
-        solution: "FSG",
+        solution: (answer: string) => answer.toLocaleLowerCase() == "FSG".toLowerCase(),
         status: default_status,
         floor: 0
     },
     {
         name: "Sprachwissenschaften",
         pos: {x: 55, y: 35},
-        solution: "FREMDSPRACHE",
+        solution: (answer: string) => answer.toLocaleLowerCase() === "FREMDSPRACHE".toLowerCase(),
         status: default_status,
         floor: 1
     },
@@ -52,14 +52,14 @@ const general_stations: Station[]  = [
     {
         name: "Kunst und Musik",
         pos: {x: 28, y:10},
-        solution: "KULTUR",
+        solution: (answer: string) => answer.toLocaleLowerCase() === "KULTUR".toLowerCase(),
         status: default_status,
         floor: 0
     },
     {
         name: "Naturwissenschaften",
         pos: {x: 92, y: 85},
-        solution: "145",
+        solution: (answer: string) => answer === "145",
         status: default_status,
         floor: 1
     }
