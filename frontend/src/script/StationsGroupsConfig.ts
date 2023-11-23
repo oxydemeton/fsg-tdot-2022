@@ -21,7 +21,7 @@ const ending_stations: Station[]  = [
         name: "Sporthalle",
         pos: {x: 95, y: 65},
         status: default_status,
-        desc: ()=>"Nach deraußen und dann gerade aus ->",
+        desc: ()=>"Nach draußen gehen und dann gerade aus ->",
         floor: 0
     }
 ]
