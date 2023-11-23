@@ -149,7 +149,7 @@ const dispatch = createEventDispatcher();
                     <tr class="" >
                         <th class="">{station.name}:</th>
                         <td class="italic">
-                            <Spoiler class="inline-block">
+                            <Spoiler>
                                 {#if (station.solution)}
                                     "{@html station.solution}"
                                 {:else}
