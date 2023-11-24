@@ -32,6 +32,7 @@ const general_stations: Station[]  = [
         name: "Gesellschaftswissenschaften",
         pos: {x: 33, y: 35},
         solution: (answer: string) => answer.toLocaleLowerCase() == "FSG".toLowerCase(),
+        hintSolution: "FSG",
         status: default_status,
         floor: 0
     },
@@ -39,6 +40,7 @@ const general_stations: Station[]  = [
         name: "Sprachwissenschaften",
         pos: {x: 55, y: 35},
         solution: (answer: string) => answer.toLocaleLowerCase() === "FREMDSPRACHE".toLowerCase(),
+        hintSolution: "Fremdsprache",
         status: default_status,
         floor: 1
     },
@@ -53,6 +55,7 @@ const general_stations: Station[]  = [
         name: "Kunst und Musik",
         pos: {x: 28, y:10},
         solution: (answer: string) => answer.toLocaleLowerCase() === "KULTUR".toLowerCase(),
+        hintSolution: "Kultur",
         status: default_status,
         floor: 0
     },
@@ -60,6 +63,7 @@ const general_stations: Station[]  = [
         name: "Naturwissenschaften",
         pos: {x: 92, y: 85},
         solution: (answer: string) => answer === "145",
+        hintSolution: "145",
         status: default_status,
         floor: 1
     }

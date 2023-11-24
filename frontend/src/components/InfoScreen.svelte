@@ -150,10 +150,10 @@ const dispatch = createEventDispatcher();
                         <th class="">{station.name}:</th>
                         <td class="italic">
                             <Spoiler>
-                                {#if (station.solution)}
-                                    "{@html station.solution}"
+                                {#if (station.hintSolution)}
+                                    "{@html station.hintSolution}"
                                 {:else}
-                                    Es gibt keine Lösung
+                                    Es wird keine Lösung benötigt.
                                 {/if}
                             </Spoiler>
                         </td>
