@@ -19,9 +19,9 @@ export interface Station {
     */
     name: string
     /**
-     * TODO
+     * Der Aktuelle Stand der Station. Ist sie Bereits abgeschlossen, aktuell in bearbeitung oder noch verschlossen.
      */
-    status: number
+    status: StationStatus
     /**
      * Gibt einen Text zurück, der unter dem Titel im Popup der Station angezeigt wird. Ist keine FUnktion gegeben, wird keine BEschreibung angezeigt.
      * @param gruppe Die ID der Gruppe. So dass jede Gruppe eine andere Beschreibung bekommen kann.
@@ -33,3 +33,5 @@ export interface Station {
      */
     floor: number
 }
+
+export type StationStatus = "Done" | "Current" | "Locked"

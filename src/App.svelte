@@ -30,7 +30,7 @@
         station_num = 0
         all_stations.forEach((it, i, arr)=>{
             arr[i].status = default_status
-            if (i === 0) arr[i].status = 0
+            if (i === 0) arr[i].status = "Current"
         })
         console.log("RESET")
     }
@@ -41,8 +41,8 @@
         if(station_num >= all_stations.length){
             reset()
         }else {
-            all_stations[station_id].status = 1
-            all_stations[id_by_group_and_num(group, station_num)].status = 0
+            all_stations[station_id].status = "Done"
+            all_stations[id_by_group_and_num(group, station_num)].status = "Current"
         }
     }
 
@@ -62,9 +62,9 @@
     if (!isNaN(Number(hash_params.get("station")))) {
         station_num = Number(hash_params.get("station")) % all_stations.length
         for (let i = 0; i < station_num; i++) {
-            all_stations[id_by_group_and_num(group, i)].status = 1
+            all_stations[id_by_group_and_num(group, i)].status = "Done"
         } 
-        all_stations[id_by_group_and_num(group, station_num)].status = 0
+        all_stations[id_by_group_and_num(group, station_num)].status = "Current"
     }
 
 </script>

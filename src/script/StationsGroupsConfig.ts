@@ -1,4 +1,4 @@
-import type {Station} from "./Station"
+import type {Station, StationStatus} from "./Station"
 
 /**
  * Anzahl der Gruppen in einem Durchlauf.
@@ -7,8 +7,8 @@ import type {Station} from "./Station"
  */
 const group_count = 12
 
-//Status all Groups start with. TODO besser Dokumentieren
-const default_status = -1
+//Alle Gruppen(außer der ersten) sollen zu Beginn noch verschlossen sein und dafür diesen Wert nehmen.
+const default_status: StationStatus = "Locked"
 
 /**
  * Eine Liste An Definitionen von Stationen.
@@ -18,7 +18,7 @@ const beginning_stations: Station[] = [
     {
         name: "Mensa",
         pos: {x: 2, y: 60},
-        status: 0,
+        status: "Current", //Erste Station muss Current sein.
         floor: 0,
         desc: (_)=>"Los geht's!"
     }

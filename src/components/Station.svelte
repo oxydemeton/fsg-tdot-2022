@@ -16,7 +16,7 @@
     let show_popup = $state(false)
     //Function on click of the Lock
     function toggle_popup() {
-        if (station.status === 0) {
+        if (station.status === "Current") {
             show_popup = !show_popup
         }
     }
@@ -39,38 +39,38 @@
 
     //Selecting correct Image to be shown
     const current_lock = $derived(() => {
-        if (station.status === 0) {
+        if (station.status === "Current") {
             return LockSelected
-        }else if (station.status < 0){
+        }else if (station.status === "Locked"){
             return LockClosed
         }else {
             return LockOpen
         }
     })
     const current_lock_wp = $derived(() => {
-        if (station.status === 0) {
+        if (station.status === "Current") {
             return LockSelectedWp
-        }else if (station.status < 0){
+        }else if (station.status === "Locked"){
             return LockClosedWp
         }else {
             return LockOpenWp
         }
     })
     const current_lock_sm = $derived(() => {
-        if (station.status === 0) {
+        if (station.status === "Current") {
             return LockSelectedSM
-        }else if (station.status < 0){
+        }else if (station.status === "Locked"){
             return LockClosedSm
         }else {
             return LockOpenSm
         }
     })
     const current_arrow = $derived(() => {
-        return station.status === 0 ? ArrowRed: ArrowGray
+        return station.status === "Current"? ArrowRed: ArrowGray
     })
     //Calculated Opacity of the arrow indicating the level whether the station is the current one or not
     const arrow_opacity = $derived(() => {
-        if (station.status === 0) {
+        if (station.status === "Current") {
             return "1"
         }else {
             return "0.6"
@@ -78,7 +78,7 @@
     })
     //Whether the station popup should be shown
     const popup = $derived(() => {
-        return station.status === 0 && show_popup
+        return station.status === "Current" && show_popup
     })
 </script>
 
