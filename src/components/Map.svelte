@@ -27,7 +27,9 @@ button {
 }
 
 </style>
+<!--Map Bild-->
 <img id="Map" src={compute_current_img()} alt="Map">
+<!--Buttons zum Ebenenwechsel-->
 <div id="button-box">
     <button type="button" onclick={()=>floor_lvl++} disabled={floor_lvl>0} class="disabled:bg-neutral-500 disabled:text-neutral-700 enabled:hover:ring-4 ring-fsg"> /\</button> <br>
     <button type="button" onclick={()=>floor_lvl--} disabled={floor_lvl<0} class="disabled:bg-neutral-500 disabled:text-neutral-700 enabled:hover:ring-4 ring-fsg"> \/</button>

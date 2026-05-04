@@ -1,10 +1,19 @@
 import type {Station} from "./Station"
 
-//Total count of groups wich exist
+/**
+ * Anzahl der Gruppen in einem Durchlauf.
+ * Min. 1 Gruppe.
+ * Gruppenzahl erhöhungen sollten gestestet werden, dass Gruppen nicht mehrere Stationen mit einander laufen.
+ */
 const group_count = 12
 
-//Status all Groups start with
+//Status all Groups start with. TODO besser Dokumentieren
 const default_status = -1
+
+/**
+ * Eine Liste An Definitionen von Stationen.
+ * Diese Stationen werden in der hier definierten Rheinfolge zu beginn von allen Gruppen durchaulaufen.
+ */
 const beginning_stations: Station[] = [
     {
         name: "Mensa",
@@ -15,7 +24,10 @@ const beginning_stations: Station[] = [
     }
 ]
 
-//Stations all groups end with
+/**
+ * Eine Liste An Definitionen von Stationen.
+ * Diese Stationen werden in der hier definierten Rheinfolge zuletzt von allen Gruppen durchaulaufen.
+ */
 const ending_stations: Station[]  = [
     {
         name: "Sporthalle",
@@ -26,7 +38,10 @@ const ending_stations: Station[]  = [
     }
 ]
 
-//Regular Stations wich are split up between the groups
+/**
+ * Eine Liste An Definitionen von Stationen.
+ * Diese Stationen werden in je nach Gruppe in jeweils anderer Rheinfolge durchlaufen.
+ */
 const general_stations: Station[]  = [
     {
         name: "Gesellschaftswissenschaften",
@@ -71,7 +86,9 @@ const general_stations: Station[]  = [
 //Export constants
 export {group_count, beginning_stations, general_stations, ending_stations}
 
-//All stations connected together
+/**
+ * Liste aller Stationen in der in dieser Datei definierten Rheinfolge.
+ */
 const all_stations = beginning_stations.concat(general_stations).concat(ending_stations)
 
 //Local function to generate general_id by group and inner general station count
